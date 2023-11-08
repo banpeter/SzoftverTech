@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SRS</title>
+</head>
+
+<style type="text/css">
+    
+table, tr, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  background-color: #96D4D4;
+}
+
+</style>
+
+
+<body>
+    <h1><center>Captain Sonar</center></h1>
+    
+    <h3>Munkanapló_H3</h3>
+
+    <table>
+        <tr>
+          <td>Időpont</td>
+          <td>Esemény</td>
+          <td>Részvevők</td>
+        </tr>
+        <tr>
+            <td>2023-10-30</td>
+            <td>H3 feladatok kiosztása</td>
+            <td>Mindenki</td>
+        </tr>
+        <tr>
+            <td>2023-11-04</td>
+            <td>H3 megbeszélés</td>
+            <td>Mindenki</td>
+        </tr>
+        <tr>
+            <td>2023-11-08</td>
+            <td>Megírt dokumentumok áttekintése</td>
+            <td>Mindenki</td>
+        </tr>
+
+    </table> 
+
+
+    <div id="Tartalomjegyz&eacute;k1" dir="ltr">
+    
+<p style="margin-bottom: 0cm;"><a href="#1">1. Bevezetés</a></p>
+
+    
+<p style="margin-bottom: 0cm;"><a href="#2">2. Áttekintés</a></p>
+
+    
+<p style="margin-left: 0.5cm; margin-bottom: 0cm;"><a href="#2_1">2.1 A termék környezete:</a></p>
+
+    
+<p style="margin-left: 0.5cm; margin-bottom: 0cm;"><a href="#2_2">2.2 A termék környezete:</a></p>
+
+    
+<p style="margin-left: 0.5cm; margin-bottom: 0cm;"><a href="#2_3">2.3 Felhasználók:</a></p>
+
+
+<p style="margin-left: 0.5cm; margin-bottom: 0cm;"><a href="#2_4">2.4. Korlátozások, feltételezések, függőségek:</a></p>
+
+
+<p style="margin-left: 0.5cm; margin-bottom: 0cm;"><a href="#3">3. A rendszer funkciói</a></p>
+
+
+<p style="margin-left: 0.5cm; margin-bottom: 0cm;"><a href="#3_1">3.1 Fiók kezelés</a></p>
+
+    
+<p style="margin-left: 0.5cm; margin-bottom: 0cm;"><a href="#3_2">3.2.
+    Főmenü</a></p>
+
+
+<p style="margin-left: 0.5cm; margin-bottom: 0cm;"><a href="#3_3">3.3 Szövetségi rendszer</a></p>
+
+    
+<p style="margin-left: 0.5cm; margin-bottom: 0cm;"><a href="#3_4">3.4 Speciális eventek</a></p>
+
+<p style="margin-left: 0.5cm; margin-bottom: 0cm;"><a href="#3_5">3.5 Flotta tervező</a></p>
+
+    
+<p style="margin-left: 0.5cm; margin-bottom: 0cm;"><a href="#3_6">3.6 Járművek és funkcióik</a></p>
+
+<p style="margin-left: 0.5cm; margin-bottom: 0cm;"><a href="#3_7">3.7 Csapatok elosztása</a></p>
+
+    
+<p style="margin-left: 0.5cm; margin-bottom: 0cm;"><a href="#3_8">3.8 Játék menet</a></p>
+
+    
+<p style="margin-left: 0.5cm; margin-bottom: 0cm;"><a href="#3_9">3.9 Játék módok</a></p>
+    
+<p style="margin-bottom: 0cm;"><a href="#4">4. Használhatóság</a></p>
+
+    
+
+
+    
+
+
+    
+<p style="margin-bottom: 0cm;"><a href="#5">5. Megbízhatóság</a></p>
+
+    
+<p style="margin-bottom: 0cm;"><a href="#6">6. Teljesítmény</a></p>
+
+    
+<p style="margin-bottom: 0cm;"><a href="#7">7.Captain Sonar Szoftver Támogatottsága és Karbantartása</a></p>
+
+    
+<p style="margin-bottom: 0cm;"><a href="#8">8. Tervezési korlátozások</a></p>
+
+    
+<p style="margin-bottom: 0cm;"><a href="#9">9. On-line dokumentáció és Help rendszer</a></p>
+
+    
+<p style="margin-bottom: 0cm;"><a href="#10">10. Felhasznált kész komponensek</a></p>
+
+
+<p style="margin-left: 0.5cm; margin-bottom: 0cm;"><a href="#10_1">10.1. Grafikus elemek:</a></p>
+
+    
+<p style="margin-left: 0.5cm; margin-bottom: 0cm;"><a href="#10_2">10.2. Játék:</a></p>
+
+
+<p style="margin-left: 0.5cm; margin-bottom: 0cm;"><a href="#10_3">10.3. A program alapja:</a></p>
+
+    
+<p style="margin-left: 0.5cm; margin-bottom: 0cm;"><a href="#10_4">10.4. AI:</a></p>
+
+<p style="margin-left: 0.5cm; margin-bottom: 0cm;"><a href="#10_5">10.5. Adatkezelés:</a></p>
+
+    
+<p style="margin-left: 0.5cm; margin-bottom: 0cm;"><a href="#10_6">10.6. Szerver:</a></p>
+
+<p style="margin-left: 0.5cm; margin-bottom: 0cm;"><a href="#10_7">10.7. Kód tárolása:</a></p>
+
+<p style="margin-bottom: 0cm;"><a href="#11">11. Szoftver Interfészeinek Leírása</a></p>
+
+</div>
+
+        <h2><a id="1"></a>1. Bevezetés</h2>
+
+        <p>
+                Ez a csapatunk SRS dokumentuma, melyben az alábbbi tényezőket fogjuk kifejteni:
+                        <h3>Áttekintés:</h3>
+                                <p>Ennek a fejezetnek a célja a készülő alkalmazás szempontjából fontos általános körülmények összefoglalása.</p>
+                                        <p>-a termék környezete</p>
+                                        <p>-legfontosabb funkciók</p>
+                                        <p>-a felhasználók jellemzői</p>
+                                        <p>-korlátozások</p>
+                                        <p>-feltételezések és függőségek</p>
+                                        <p>-a követelmények csoportosításának szempontjai</p>
+                        <h3>A rendszer funkciói:</h3>
+                                <p>Ebben az alpontban lesznek összefoglalva a a rendszerrel szemben támasztott funkcionális követelményeket.</p>
+                                <p>A leírás történhet természetes nyelven és/vagy user case diagramok használatával.</p>
+                                <p>Case diagramok használata esetén a use case modell alapvetően use case csomagok sorozata.</p>
+                                <p>Csoportosítás ilyenkor a csomagok segítségével történik, és egy-egy alpont egy csomagra vonatkozik.</p>
+                        <h3>Használhatóság:</h3>
+                                <p>Itt kell összefoglalni azokat a nem funkcionális követelményeket, amelyek a rendszer használhatóságát befolyásolják.</p>
+                                        <p>-Mennyi betanulási időre lesz majd szüksége a rendszer hatékony használatához egy kezdő és egy gyakorlott felhasználónak.</p>
+                                        <p>-Mennyi idő alatt tud egy adott tevékenységet végrehajtani egy átlagos felhasználó a jelenlegi módszerrel, meglévő más rendszerek, illetve a fejlesztendő rendszer segítségével.</p>
+                                        <p>-Melyek azok a rendszer tulajdonságok, amelyek segíthetik a kezdő felhasználót a gyors betanulásban?</p>
+                                        <p>-Milyen egyéb lehetőségek állnak rendelkezésre (vagy kérhetők a fejlesztőktől ingyen vagy külön díjazás fejében) a betanulás elősegítésére (tréningek, dokumentációk, könyvek, demonstrációs prototípus stb.)</p>
+                                        <p>-Mennyire hasonló vagy eltérő a felhasználói felület, annak használati módja a felhasználók által már korábban is használt alkalmazásokkal összehasonlítva?</p>
+                                        <p>-Ha a leendő alkalmazással párhuzamosan más alkalmazásokat is fognak használni a felhasználók a munkájuk során, összhangban vannak-e ezek programok a használat (elsősorban a felhasználói felület szempontjából)?</p>
+                        <h3>Megbízhatóság:</h3>
+                                <p>A rendszerrel szemben támasztott megbízhatósági követelmények.</p>
+                                        <p>-Rendelkezésre állás (pl. %-ban): teljes használhatóság, karbantartási idő, korlátozott használhatóság.</p>
+                                        <p>-MTBF: (Mean Time Between Failures): hibák között eltelt átlagos idő.</p>
+                                        <p>-MTTR: (Man Time To Repair): egy hiba utáni javítás átlagos ideje.</p>
+                                        <p>-A rendszer eredményeinek pontossága, felbontása (ha értelmezhető).</p>
+                        <h3>Teljesítmény:</h3>
+                                <p>Itt kell leírni a rendszertől elvárt teljesítmény mutatókat.</p>
+                                        <p>-válaszidők (legalább a leggyakrabban használt funkciók esetén)</p>
+                                        <p>-áteresztőképesség (például tranzakció/mp)</p>
+                                        <p>-kapacitás (például a kezelt adatbázis max. mérete, feldolgozandó tranzakciók száma, egyidejűleg kiszolgálandó felhasználók száma stb.)</p>
+                                        <p>-a korlátozott használhatóság idején elvárható / teljesítendő mutatók</p>
+                                        <p>-erőforrás igények (processzor sebesség, memória igény, diszk kapacitás, sávszélesség stb.)</p>
+                        <h3>Támogatottság:</h3>
+                                <p>A rendszer üzembe helyezése után szükséges karbantartási feladatok megkönnyítésére szolgáló követelmények.</p>
+                                        <p>-a használandó kódolási szabványok, elnevezési konvenciók</p>
+                                        <p>-csak a karbantartóknak, illetve üzemeltetőknek szükséges funkciók</p>
+                                        <p>-a működés során keletkező naplók (a későbbi hibakeresés vagy finomhangolás elősegítésére)</p>
+                                        <p>-a karbantartók munkáját segítő segédalkalmazások (például a naplók kiértékelésére)</p>
+                        <h3>Tervezési korlátozások:</h3>
+                                <p>Itt kell felsorolni egy-egy alpontban minden olyan korlátozást, amely a tervezési, esetleg az implementációs munkát befolyásolja.</p>
+                                        <p>-a kívánatos architektúrára vonatkozó előírások (például milyen részekből [„tier”] kell felépíteni az alkalmazást)</p>
+                                        <p>-milyen programozási nyelv(ek)et kell használni</p>
+                                        <p>-milyen fejlesztőeszközt kell használni</p>
+                                        <p>-milyen újra felhasználható elemek építhetők be az alkalmazásba (komponens- és/vagy osztálykönyvtárak, kész kódok stb.)</p>
+                                        <p>-milyen fejlesztési módszertant, hogyan kell használni</p>
+                        <h3>On-line dokumentáció és Help rendszer:</h3>
+                                <p>Kellenek-e ilyenek, ha igen, a vonatkozó információk.</p>
+                        <h3>Felhasznált kész komponensek:</h3>
+                                <p>Egy-egy alpontban kell felsorolni az alkalmazásba építendő vásárolt vagy szabad felhasználású elemeket.</p>
+                                <p>Vásárlás esetén a részletezni kell a beszerzés körülményeit, a költségeket, a betartandó liceszelési és egyéb szabályokat.</p>
+                                <p>Szabad felhasználású elem esetén is fontos a forrás pontos megjelölése, a felhasználás szabályai, az alkalmazásra ebből adódó esetleges következmények, kötelezettségek.</p>
+                        <h3>Interfészek:</h3>
+                                <p>Ebben a fejezetben kell specifikálni a rendszer valamennyi külső kapcsolatát, az ezt biztosító interfészeket.</p>
+                                        <h4>-Felhasználói interfészek:</h4>
+                                                <p>-Ebben az alpontban kell leírni a felhasználói interfészre vonatkozó követelményeket.</p>
+                                                        <p>-használandó szabvány vagy kvázi-szabvány, stílus</p>
+                                                        <p>-a különböző felhasználói csoportok (munkakör, gyakorlottság stb. szerint) elvárásai</p>
+                                                        <p>-a leglényegesebb user interface elemek tervei</p>
+                                        <h4>-Hardware interfészek:</h4>
+                                                <p>-Ha vannak a rendszerben speciális kezelendő hardware elemek.</p>
+                                        <h4>-Software interfészek:</h4>
+                                                <p>-Ha a rendszernek más rendszerekkel az üzembe helyezés után, vagy belátható időn belül majd a kapcsolatot kell tartania más rendszerekkel, itt kell megadni a kapcsolat kiépítéséhez szükséges részletességű információkat.</p>
+                                        <h4>-Kommunikációs interfészek:</h4>
+                                                <p>-Ha a rendszernek valamilyen kommunikációs csatorna vagy csatornák segítségével kell kapcsolatot tartania a felhasználókkal vagy más rendszerekkel.
+                                                 (Például internetes, mobiltelefonos kliens stb.)</p>
+                        <h3>Alkalmazott szabványok:</h3>
+                                <p>A fejlesztés során vagy az alkalmazás készítése és üzemeltetése, használata során betartandó előírások (technikai vagy szakterületi szabványok, törvények stb.)</p>
+                                        <h4>-Kötelezően alkalmazandó szabványok:</h4>
+                                                <p>-Valamilyen szintű előírás miatt. (Például törvényi előírás stb.)</p>
+                                        <h4>-Választás alapján alkalmazott szabványok:</h4>
+                                                <p>-A fejlesztők vagy a felhasználók által valamilyen okból önként vállalt előírások.</p>
+                        <h3>Mellékletek:</h3>
+                                <p>Főleg hosszabb dokumentumok esetén ide kerülhet minden olyan információ, ami a dokumentum áttekinthetőségét segíti (pl. tárgymutató, irodalomjegyzék, egyéb források megjelölése), illetve a fejlesztés egyéb, kapcsolódó dokumentumaira való hivatkozás.</p>
+        </p>
+
+     <h1><a id="2"></a>2. Áttekintés<br>
+    </h1>
+    <font face="Berlin Sans FB">Overview</font><br>
+    <h2><a id="2_1"></a>2.1 A termék környezete:</h2>
+    <p> Számítógépes játék révén a szofter a játékiparban helyezkedik
+      el, ráadásul egy olyan helyet kitöltve, ahol igen kevés ilyen
+      digitalizált játék a konkurencia.</p>
+    <p>A program jelenleg számítógépes, JVM-t is támogató környezetben
+      működik. A Java Virtual Machine (JVM) egy olyan virtuális gép,
+      amely a Java programokat futtatja. Ez a szoftverkomponens
+      kulcsszerepet játszik a Java platform működésében, számos előnyt
+      kínálva a Java nyelvű fejlesztőknek.<br>
+      Ez a virtuális gép egy olyan környezetet biztosít, amelyben a Java
+      forráskódot bytecode-ra fordítja, majd ezt a bytecode-ot futtatja
+      le. Ez a bytecode platformfüggetlen, tehát a JVM által támogatott
+      különböző rendszereken ugyanaz a Java program futtatható.<br>
+      A JVM végzi el a bytecode interpretálását vagy just-in-time (JIT)
+      fordítását, amely optimalizálja és gyorsítja a Java programok
+      futását. Emellett a JVM felelős a memóriakezelésért, garbage
+      collectionért, illetve egyéb futásidejű tevékenységekért.<br>
+      Az, hogy a Java platformot JVM-en keresztül valósítják meg,
+      lehetővé teszi a Java programoknak a platformfüggetlenséget és a
+      könnyű hordozhatóságot. Egy alkalmas JVM telepítésével a Java
+      alkalmazások futtathatók a különböző operációs rendszereken
+      anélkül, hogy a forráskódot újra kellene fordítani.<br>
+      Összességében a JVM a Java programok életét kezeli a forráskód
+      írásától a futtatásig, biztosítva a hatékonyságot, hordozhatóságot
+      és platformfüggetlenséget a Java fejlesztők számára.<br>
+    </p>
+    <p>Ezekre a gépekre Steam, valamint Epic Games segítségével lehet a
+      szoftvert telepíteni és elindítani.</p>
+    <p><br>
+    </p>
+    <h2><a id="2_2"></a>2.2 A termék környezete:</h2>
+    <ul>
+      <li>
+        <p><u>fiók regisztrálása:</u> egy e-mail címet megadva egy
+          megerősítő kód segítségével tudunk megadni felhasználónevet és
+          jelszót, helytelen/már foglalt felhasználónév esetén a program
+          jelez.<br>
+        </p>
+      </li>
+      <li>
+        <p><u>bejelentkezés meglévő fiókba:</u> e-mail
+          cím/felhasználónév és jelszó kombinációval<br>
+        </p>
+      </li>
+      <li>
+        <p><u>fiók helyreállítása elfelejtett jelszó/felhasználónév
+            esetén:</u> e-mail címre küldött kód segítségével, ahol egy
+          új jelszót tud beállítani a felhasználó.<br>
+        </p>
+      </li>
+      <li>
+        <p><u>beállítások</u>: megjelenéssel és hanggal kapcsolatos
+          beállítások</p>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <p>játék, többféle játékmóddal<br>
+        </p>
+      </li>
+      <li>
+        <p><u>flottatervező:</u> a játék során megszerzett alkatrészeket
+          itt lehet a saját hajókra "rászerelni", így képességekkel,
+          specialitásokkal és felszerelésekkel rendelkeznek, amelyek
+          befolyásolják a játékmenetet. Ezek egyaránt jelenthetnek
+          előnyt vagy hátrányt is a játékban, hogy senki ne szerezhessen
+          túl nagy fölényt.<br>
+        </p>
+      </li>
+      <li>
+        <p>ranglista</p>
+      </li>
+      <li>
+        <p>különleges event-ek<br>
+        </p>
+      </li>
+      <li>
+        <p>játékstatisztikák</p>
+      </li>
+      <li>
+        <p><u>lobby:</u> lehetőséget ad a szövetségi rendszerben lévő
+          játékosok meghívására, hogy barátságos játék esetén
+          összecsapjanak vagy közösen küzdjenek meg egy ellenséges
+          szövetségi rendszerrel szemben.</p>
+      </li>
+      <li>
+        <p><u>szövetségi rendszer:</u> a játékosok közösségeket
+          alkothatnak és ezáltal még jobban elmélyülhetnek a játékban</p>
+      </li>
+      <li>
+        <p>chat</p>
+      </li>
+    </ul>
+    <p> </p>
+    <p><br>
+    </p>
+    <h2><a id="2_3"></a>2.3 Felhasználók:</h2>
+    <p>A termék elsősorban olyan játékosoknak szól, akik szeretik a
+      stratégiai és kooperatív játékokat, valamint akik képesek
+      stresszhelyzetben is minél jobb döntéseket hozni. Mivel a játékban
+      többféle pozícióban kell helytállni, ezért tökéletes választás
+      baráti társaságok körében, mivel együttműködve kell dolgozni a
+      győzelem érdekében, ráadásul mivel többféle szerepet kell ellátni,
+      ezért mindenki meg fogja találni a saját pozícióját attól függően,
+      hogy az adott személy éppen vezéralkat, vagy inkább a háttérben
+      szeretné megnehezíteni az ellenség dolgát. Abból adódóan, hogy
+      megfontolt döntéseket kell hozni a játék során, valamint mivel
+      egyes körök igencsak elhúzódhatnak időben, ezért szükséges egy
+      bizonyos érettség ahhoz, hogy megfelelő élményt nyújtson a termék.</p>
+    <p><br>
+      A Captain Sonar, mint termék, elsősorban azoknak a játékosoknak
+      szól, akik élvezik a stratégiai és kooperatív játékokat. A játék
+      nem csak a taktikai gondolkodást, hanem a csapatmunka és hatékony
+      kommunikáció fontosságát is kiemeli. Azok számára, akik
+      stresszhelyzetekben is képesek a legjobb döntéseket hozni, a
+      Captain Sonar egy tökéletes társasjáték.<br>
+      Kiváló választás baráti társaságok körében, mivel együttműködve
+      kell dolgozni a győzelem érdekében, ráadásul amiatt, mert a
+      játékban többféle pozícióban kell helytállni, mindenki meg fogja
+      találni a saját pozícióját attól függően, hogy az adott személy
+      éppen vezéralkat, vagy inkább a háttérben szeretné megnehezíteni
+      az ellenség dolgát.<br>
+      Az egyéni készségek és preferenciák sokszínűségét hangsúlyozva a
+      Captain Sonar kiválóan alkalmazkodik mindenki játékstílusához.
+      Lehetőséget ad arra, hogy mindenki megtalálja a saját helyét, és a
+      csapat együttes erőfeszítése eredményeként érjék el a győzelmet.<br>
+      A játék nem csupán kihívásokat kínál, hanem a megfontolt döntések
+      fontosságát is hangsúlyozza. Az egyes körök elhúzódhatnak időben,
+      így az érettség és a türelem nélkülözhetetlen ahhoz, hogy teljes
+      mértékben élvezetessé váljon a játékélmény. A Captain Sonar tehát
+      nem csupán egy játék, hanem egy kifinomult, izgalmas kaland, amely
+      mély stratégiai és társas kapcsolatokat épít ki a játékosok
+      között.<br>
+      <br>
+    </p>
+    <h2><a id="2_4"></a>2.4. Korlátozások, feltételezések, függőségek:</h2>
+    <p> Korlátokat tekintve a programnak nincsenek nagy megszorításai,
+      mivel nincsenek olyan szükségletei, mint például egy mai AAA
+      játéknak.</p>
+    <p>Gépigénye viszonylag alacsony, abból eredendően, hogy nem
+      rendelkezik sem olyan grafikai elemekkel, amik leterhelnék a
+      GPU-t, sem olyan számításokat nem kell végeznie a programnak, ami
+      a CPU-t túlzottan igénybe venné, így nem kell erős hardware hozzá,
+      szinte minden ma használt személyi számítógépen elfut, feltéve,
+      hogy az támogatja a JVM-t és a JRE-et, mivel ezek nélkül nem tud
+      futni az alkalmazás. A JVM (Java Virtual Environment) egy olyan
+      környezetet biztosít, amelyben képes az elkészített futtatható
+      Java byte kód futni. Ennek hiányában viszont nem indítható el a
+      játék. <br>
+      A programot Java-ban fejlesztjük, több előnye, köztük a
+      platformfüggetlensége miatt is, viszont ehhez így szükséges a JRE,
+      ami nélkül nem fog futni az alkalmazás.</p>
+    <p>Az internetelérés opcionális, ugyanis létezik a játékban offline
+      multiplayer mód, ahol a jelen levő csapattársainkkal mesterséges
+      intelligencia ellen tudunk úgy játszani, mintha másokkal
+      játszanánk. Ennek ellenére ajánlott az internetes csatlakozás,
+      hogy elérhessünk frissítéseket, láthassuk a ranglistákat, el
+      tudjuk menteni játékállásainkat online, de főleg azért, mert jobb
+      érzés élő embereket legyőzni, mint egy nem létező virtuális
+      ellenfelet.</p>
+    <h3>Ajánlott minimum rendszerkövetelmény:</h3>
+    <blockquote>
+      <p align="left"><u>Operációs rendszer:</u> Windows 10 vagy újabb;
+        Linux; MacOS<br>
+      </p>
+      <p align="left"><u>Processzor:</u> Intel Core i5 vagy AMD Ryzen 5</p>
+      <p align="left"><u>Memória:</u> 4 GB RAM</p>
+      <p align="left"><u>Videokártya:</u> NVIDIA GeForce GTX 750 Ti vagy
+        AMD Radeon RX 560</p>
+      <p align="left"><u>Tárhely:</u> 5 GB szabad hely</p>
+    </blockquote>
+    <p><br>
+    </p>
+
+    <h2><a id="3"></a>3. A rendszer funkciói</h2>
+
+
+        <h3><a id="3_1"></a>3.1 Fiók kezelés</h3>
+
+        A játékos ahhoz hogy használni tudja a programot regisztrálnia kell. A játék elindításást követően a játékosnak be kell jelentkeznie, vagy ha még nincs fiókja akkor regisztrálnia kell egyet. A regisztrálás során kell andnia egy e-mail címet egy felhasználó nevet valamint egy jelszót, amelyet meg kell erősítenni annak érdekében hogy nem-e történt elírás. Amennyiben a két megadott jelszó nem egyezik meg akkor újra ki kell töltenie a megfelelő mezőket. Ha sikeresen regisztrálta a fiókot akkor tovább léphet a bejelentkezés fázisába. Itt a felhasználónév valamint a jelszó megadásával léphet be. A jelszavakat kódoljuk hogy egy esetleges adatszivárgás esetén ne lehessen őket felhasználni.
+
+        <p>A bejelentkezés követően a felhasználónak lehetősége van használni a program funkcióit, ezen belül is a fiók kezelése funkciót. Itt a játékos megváltoztathatja a felhasználó nevét, valamint jelszavát. Továbbá kijelenkezhet a fiókjából, vagy akár törölheti is azt. A kijelentkezést leszámítva minden a fiókot érintő változáshoz szükséges a jelszó megadása.</p>
+
+        <p>A felhasználó jelszavát a szerveroldalon titkosítjuk hogy egy esetleges hacker támadás esetén ne lehessen könnyedén felhasználni az adatokat.</p>
+
+
+        <h3><a id="3_2"></a>3.2 Főmenü</h3>
+
+        <p>A főmenüben a játkékos láthatja a flottáját valamint a korábban lejátszott  játékainak az eredményeit. A főmenü feladata hogy innen könnyedén és egyszerűen elérhetőek legyen további funkciók</p>
+
+        <p>Az első funkció amely elérhető az a fiók kezelése funkció. Innen a felhaszáló megváltoztathatja jelszavát,felhasználó nevét,valamint törölheti a fiókját. Ezen módosításokhoz meg kell adnia a jelszavát biztonsági okokból. Új jelszó megadása esetén kötelező kétszer megadni az új jelszavát annak érdekében hogy biztosan a kívánt jelszót adja meg a felhasználó. Amennyiben azok nem egyeznek meg újra meg kell adni a  két új jelszavát valamint az eddig használtat. Tovább lehetősége van a felhasználónak kijelentkeznie.</p>
+
+        <p>A "Flotta tervezés" gombra kattintva a felhasználónak lehetősége van a járműveit fejlszeteni átalakítani. Három jármű elérhető amely a tengeralattjáró,romboló,valamint a repülőgép hotdozó anyahajó. A Flotta tervező további funkcióit későbbi alfejezetben mutatjuk be részletesen.</p>
+
+        <p>A "Játék lobby" gombra kattintva a játékosnak lehetősége van létrehozni egy lobby-t vagy csatlakozni egybe. Itt fontos, hogy két tipusú játékmódott megkülönböztetünk. Az egyik esetben az egyes járműveknek teljes személyzettel kell hogy rendelkezzenek, még a másik esetben nincs mekötés a játékos számot illetően(enm lehett több mint az összes jármű személyzet száma). További információk a "Csapatok elosztása" pontban olvasható. A lobbyban meghívhatjuk a szövetségi rendszerünkben lévő játékosokat, és barátságos játék esetén összecsaphatnak vagy közösen küzdhetnek meg egy ellenséges szövetségi renszerrel szemben. Továbbbá lehetőség van zárt lobby-t létrehozni ahova nem csatlakozhat akárki csak a meghívott játékosok.</p>
+
+        <p>A "Szövetségi rendszer" menüpontra kattintva van lehetőség csatlakozni szövetségekhez, létrehozni szövetséget, vagy különböző diplomácia kapcsolatokat ápolni más szövetségi rendszerekkel.</p>
+
+        <img src="fomenu.png" width="1000" height="600"  alt="Italian Trulli" align="top">
+
+        <h3><a id="3_3"></a>3.3 Szövetségi rendszer</h3>
+
+        <p>Szövetségi rendszer célja hogy a játékosok közösségeket alkossanak és ezálta még jobban elmélyülhessenek a játékban. Amennyiben egy játékos része a szövetségi rendszernek ez látható lesz a játékos profilján, továbbá láthatja a többi játékos harcainak teljes folyamát(nem csak az eredményeit) így a játékosnak egy olyan élményt nyújtunk mitha egy szövetségi rendszeren belül hozzáférne a hadi titkokhoz. Továbbá itt a játékosokna lehetősége van a kereskedésre(cserekereskedelem) amelyel egymást kisegítve tudják tovább fejleszteni a járműveiket vagy akár bővíteni a flottájukat.  </p>
+
+        <p>Továbbá a későbiekben amennyiben elér egy bizonyos játékos számot a játék olyan funcióval lehetne kibővíteni a játékot ahol egy hatalmas pályán a legnagyobb szövetségi rendszerek összecsaphatnak egymással egy akár heteken át tartó küzdelemben ahol végül csak egy marad. Ebben az event-ben tovább fokozza az izgalmakat az esetleges árulások.</p>
+
+        <p>A szövetségeken belül létre lehet hozni "osztagokat", amelynek célja hogy a közeli barátok szorosabb szövetségbe tudjanak kerülni. Egy osztag maximális létszáma 10 fő. Továbbá egy játékos csak akkor kereskedhet osztagon kívűl ha azon belül senki nem tart igény az adott alkatrészre vagy nem tudnak megfelelő ajánlatott tenni. Hogy ne lehssen ezzel viszzaélni ha 24 órán belül nem sikerült megegyezni senkível akkor feloldódik a korlátozás. Az osztag tagjai le is mondhatnak erről a jogukról.</p>
+
+        <p>Egy "osztag" közös megegyezés alalpján áttehető egy másik szövetségi rendszerbe</p>
+
+        <p>Mind a szövetségi rendszerek esetében mind az osztagok esetében van lehetőség történe írásra. Ezzel lényegében történelme lehet az egyes osztagoknak és szövetséi rendszerekenk, elgendákat alkothatnak amelyel tovább színesíthetik a játékot, amely alternatív történelemmel fog rendelkezni.</p>
+
+            <h4>Prekondíciók</h4>
+
+
+            <ul>
+              <li>A játkosnak rendelkeznie kell egy fiókkal amely alalpján azonosítható</li>
+              <li>Rendelkeznie kell a játékkal és a JVM-el hogy futtatható legyen</li>
+              <li>Nem szabad hogy részese legyen egy szövetségi rendszernek</li>
+              <li>Legalább 7 nap eltelt a legutóbbi szövetségi rendszer csatlakozása óta</li>
+            </ul>  
+
+            <h4>Posztkondíció</h4>
+
+            <ul>
+              <li>A Játékos részese lesz egy szövtségi rendszernek amelyben több más játékos is benne van</li>
+              <li>lehetősége nyílik, a velük való cserekereskedelemre</li>
+              <li>Közös csatákat vívhatnak együtt</li>
+              <li>Létrehozhat "osztagot" vagy csatlakozhat egybe.</li>
+            </ul>
+
+            <h4>Mainflow</h4>
+
+            <ul>
+              <li>A játkosnak rákattint a "Szövetségi rendszerek" gombra a főmenüben.</li>
+              <li>Megnyílik egy ablakahova beírhatja a szövetségi rendszer azonosítóját vagy nevét</li>
+              <li>A "Csatlakozás" gombra rá kattintva megerősíti valamint elküldi csatlakozási kérelmét a szerverhez</li>
+            </ul>  
+
+            <h4>AlternateFlows</h4>
+
+            <p>Amennyiben a játékos már része egy szövetségi rendszernek akkor nem engedélyezet a csatlakozás, először ki kell lépni abból a szövetségi rendszerbő amiben benne van.</p>
+
+            <h4>ExceptionFlows</h4>
+            <p>A játékos kérelme nem éri el a szervert akkor a játékosnak újra kell küldenie egy kérelmet</p>
+
+
+        <h3><a id="3_4"></a>3.4 Speciális eventek</h3>
+
+        <p>Lehetősgé szerint bizonyos időköznként szeretnénk különleges event-el kiegészíteni a játékot amelyek legfeljebb 2 hétig lennének elérhetőek. Az egyik event olyan lenne hogy mítikus tengeri szörnyeket fedezhetnek fel a játékosok(amelyekről ma sokat lehet olvasni) és ezzel a játékban is tényelg legendásak lennének azopn játékosok számára akik nem találkoztak vele. Ezek ritkák lennének és midenkit megtámadnának oldaltól függetlenül. A játékosoknak csakkor lenne lehtőségük legyőzni ha összefognak viszont a csatának továbbra is akkor van vége ha az ellenséges csapat megsemmisül ezért érdemes a munka oroszlán részét az ellenségre hagyni. Ez a taktika viszont könnyen ahhoz vezethet hogy mindenki veszít.</p>
+
+
+        <h4>Attack of the Kraken</h4>
+        <p>A kraken a víz alól támadna és ha eléri azt a mezőt ahol a jármű tartózkodik azt lerántaj a mélybe és kettő kört követően megsemmisíti azonnal. A járműveket nem lehet kiszabadítani. Egy körben kettő mezőt tud mozogni, viszont 10 élete van erős páncélja miatt, valamint csak a telitalálatok sebzik. Továbbá képes az őt körülvevő és a saját mezőját tintával elfedni így elfedve a pontos poziícióját.</p>
+
+        <h4>Prekondíciók</h4>
+
+
+            <ul>
+              <li>A játkosnak rendelkeznie kell egy fiókkal amely alalpján azonosítható</li>
+              <li>Rendelkeznie kell a játékkal és a JVM-el hogy futtatható legyen</li>
+              <li>A játékosok egy olyan csatát indítottak el amelyben az "Attack of the Kraken" játékmód be volt állítva</li>
+            </ul>  
+
+            <h4>Posztkondíció</h4>
+
+            <ul>
+              <li>Elindul a csata</li>
+              <li>A Kraken része a csatának</li>
+              <li>A csatát követően beírható a jármű történetébe a Kraken</li>
+            </ul>
+
+            <h4>Mainflow</h4>
+
+            <ul>
+              <li>A játkos rákattint a "Csata" gombra a főmenüben.</li>
+              <li>Megnyílik egy ablakahova ahol csatlakozhat egy lobby-ba vagy létrehozhat egyet</li>
+              <li>A lobby-ban a játékmódok menüpontban beállítja az "Attac of the Kraken" játékmódot</li>
+              <li>Elindul a csata a "Csata indítása" gomb megnyomását követően</li>
+              <li>A Kraken a harmadik körben megjelenik egy véletlenszerű pozícióban. A pozíciója mindig publikus</li>
+              <li>A Kraken a hozzá legközelebbi járművet támadja</li>
+              <li>A saját körében kettő mezőt tud mozogni a szörny</li>
+              <li>A Krakenre ugyan úgy használható minden képesség mint egy ellenséges járműre</li>
+              <li>Mindig egy egység mélységben mozog</li>
+              <li>10 élete van és csak a teli találat sebzi</li>
+              <li>Teli találat esetén kettő sebzést kap</li>
+              <li>Menekülés:Amikor sebzződik a saját valaimt körülötte lévő mezőt elfedi tintával így nem lehet tudni a pozícióját, és elindul egy véletlenszerű irányba.AZt követően folytatja addigi működését</li>
+              <li>Ha egy mezőn van egy hajóval az lerántja a mélyben és kettő kört követően elpusztítja</li>
+              <li>A mélybe lerántott hajók nem kiszabadíthatóak, de ha sebzést kap a szörny akkor "menekül"</li>
+              <li>Ha a  Kraken elpusztul a csata folytatódik normál leforgás alatt</li>
+              <li>Ha elsűjeszt minden hajót akkor mindeki veszített.</li>
+            </ul>  
+
+            <h4>AlternateFlows</h4>
+
+            <p>Ha a lobby vezére nem az "Attack of the Kraken" játékmódott választja ki akkor nem lesz jelen a csatában a Kraken</p>
+
+            <h4>ExceptionFlows</h4>
+            <p>Egy szerver leállás esetán a játék addigi állapota el mentődik amely később vissza tölthető.</p>
+
+
+        <h3><a id="3_5"></a>3.5 Flotta tervező</h3>
+            <p>Flotta tervezőben amely a saját kikötőnk, három jármű tipus elérhető és az egyes járművekből három-három egyéni tervezésű lehet a birtokunkban. Minden jármű egyedi alkatrészeket igényel amelyek nem mindegyike használható fel más tipusú járművekben.</p>
+
+            <p>Az egyes járművek hat darab egységből épülnek össze. Váz,páncél,propeller,motor,felderítő rendszer, valamint a tüzérségi rendszer</p>
+
+            <p>A váz azt befolyásolja hogy nem telitalálat esetén mennyi sebzést szenved a jármű, a páncél a telitalálat esetén határozza meg hogy mennyi sebzést kap a jármű. A közepes szinten 1-el csökkenti a rá vonatkozó sebzést, az acélos szinten pedig 2-vel csökkenti.</p>
+
+            <p>A motor lehet benzin,diesel,vagy nukleáris. A benzine az alap. A diesel a gyorsabb és a nukleáris meghajtás pedig a leggyorsabb.</p>
+
+            <p>A propeller lehet "el turbo" ,átlagos vagy lassú. Alapból minden járművön lassú propeller található, az átlagos egyel növeli a sebességet , az "el turbo" pedig kettővel.</p>
+
+            <p>A felderítő  rendszerben mindenki rendelkezik egy "Sonar" és egy "Drone"-al. A drón segítségével megnézhetjuk hogy egy adott szektorban jelen van-e az ellenség. A sonar segítségével pedig kikényszeríthenünk egy igaz és egy hamis állítást az ellenség pozíciójáról.</p>
+
+            <p>A fegyverzet minden járműnek egyedi, bár vannak átfedések az egyes járművek között. A torpedó alapvetően egyet sebez ha szomszédos és kettőt ha teli találat. A kettes szintű torpedó pedig már 5 egységnyi távolságot képes megtenni és telitalálat esetén képes 3-at sebezni. A 3. szintű torpedó pedig 6 egységnyi távolságra lőhető és 2-őt sebez a szomszádos mezőn, valamint hármat telitalálat esetén./p>
+
+
+            <img src="dock.png" width="1000" height="600"  alt="Italian Trulli" align="top">
+
+            <h4>Felszerelések rendszere, hogyan lehet őket kombinálni:</h4>
+            <p>Az egyes egységeből ha mindegyikből lehetne használni a legfejletteb rendszert az rendkívűl erőssé tenné az adott járművet. Éppen ezért a jármű összeállítása során maximum 2 darab hármas szintű, valamint maximum 3 darabb 2-es szintű egységet lehet felhasználni. Ez rákényszeríti a játékosokat arra hogy különböző játékstílusokat is kipróbáljanak. Abban az esetben ha egy járműre felszerelünk egy különleges fegyverzetet a játékos csak 1 darab hármas szintű egységet használhat fel.</p>
+
+            <h4>Prekondíciók</h4>
+            <p>Rendelkezik részegységekkel</p>
+            <h4>Postkondíció</h4>
+            <p>Az általa kiválasztott jármű rendelkezik a kiválasztott részegységek tulajdonságaival</p>
+            <h4>Mainflow</h4>
+            <ul>
+              <li>A játkos rákattint a "FLotta tervező" gombra a főmenüben.</li>
+              <li>Így a főmenüből átlép a flotta tervező menübe.</li>
+              <li>A megfelelő járműre rákattintva felugrik egy ablka amiben láthatja a három elérhető verziót.</li>
+              <li>Egy tetszőleges járművet kiválasztva felugrik egy másik ablak amelyben a megfelelő alkatrészeket kiválasztva megváltoztathatja az adott részegységet, megfeleve a feltéeleknek.</li>
+              <li>A véglegesítés gombra rákattintva elmenti a jármű új verzióját.</li>
+            </ul> 
+
+            <h4>AlternateFlows</h4>
+            <p>A játékos nem az általa gondolt részegységet építi be így nem a kívánt tulajdonsákkal fog rendelkezni a járműve</p>
+
+            <h4>ExceptionFlows</h4>
+            <p>A kérelem nem ér el a szerverhez ezért el kell kezdenie előröl a folyamatot</p>
+
+        <h3>Chat</h3>
+
+            <p>A chat rendszer már a lobby-ban létrejön egy külön ablakban és ott lehet kommunikálni. A lobby arra szolgál hogy a játékosok összegyűljenek és szinkronba kerülejene egy játékhoz. A chat ablakban két mód van az egyik az amikor mindenki látja amit a chatber ír a játékos, a másik esetben pedig csak a csapattársak látják. Amennyiben a felhasználó a chatbe az üzenete elé beírja hogy "/all" akkor az az üzenet mindenki számára látható lesz aki résztvesz a csatában.</p>
+
+        <h3><a id="3_6"></a>3.6 Járművek és funkcióik</h3>
+
+            <h4>Romboló</h4>
+                <p>Romboló feladatta hogy felderített tengeralattjárókra mérjen csapást valamint szigeteket foglaljon és hogy légvédelmet biztosítson. A romboló 3 egységet tud mozogni és a romboló alapvetően 2 "élettel" rendelkezik. Mivel könnyű elpusztítani ezért fontos kihasználnia azt az előnyét hogy gyors.</p>
+
+                <p>Két fegyverzettel rendelkezik alapból, amely a légvédelmi ágyú és az akna. A légvédelimi ágyúval le lehet lőni egy az aznonos szektorban lévő légi járművet, továbbá a szintén azonos szektorban lévő felszínen lévő járművekbe tud egyet sebezni teli találat esetén. Az akna bármelyik szomszédos mezőre elhelyezhető(átlósan szomszédos mező esetén is) és bármikor detonáltatható, teli találat esetén egyet sebez, szomsédos mező esetén pedig felfedi hogy az ellenség benne volt egy szomsédos mezőjében. A romboló különleges fegyverzete a robbanó hordók. Ezeket úgy tudja kijátszani hogy egy körben 4 azonos irányú lépést tesz és minden egyes lépésnél kiválasztható hogy meilyen mélységbe merüljön a hordó. Amennyiben eltalálja a tengeralatjárót 2 sebzést okoz, amennyibben szomszédos mezőben van 1 sebzést okoz. </p>
+                
+                <p>A romboló élete adott, viszont páncélzattal és vázzal lehet csökkenteni a kapott sebzés mértékét. Páncélból és vázból 3 szint van. Az "alap", a "kemény" és az "acélos" amely a legerősebb. Minden egyes szint 1-el csökkenti a kapott sebzést a rá vonatkozó esetben. </p>
+
+                <p>A Sonar, és a drón a felderítésben segítenek. A sonar segítségével le ellenőrizhetjük hogy egy szektorban tartózkodik-e az ellenfél, a drónnal pedig egy igaz és egy hamis állítást kell adnia az ellenfélnek a pozíciójáról. Itt is kettővel fejletteb rendszerek taálhetóak melyek 1-el csökkentik a felkészültségek számát használat előtt.</p>
+
+                <p>Az "előretörés" képesség során valamilyen irányban 6 egységet tud mozogni, minden lépés azonos irányban történik.  Ezt a képességet a propeller befolyásolja amely a 2. szinten egyel növeli a ható távot még a harmadik szinten engedélyez egy irányváltoztatást az utolsó lépés során.</p>
+
+                <p>Amennyiben egy Romboló "karbantartást végez" a karban tartandó rendszerek megjavulnak, cserébe három körből kimarad, valamint nyílvános lesz egy kör erejéig hogy mely szektorban tartózkodik. Cserébe viszont újra elérhető a korábbi útvonala.</p>
+
+
+            <h4>Repülőgéphordozó anyahajó</h4>
+
+                <p>Repülőgéphordozó anyahajó feladatta hogy távolról felderítse az ellenséget és csapást mérjen rájuk. Az anyahajó a játékban mondhatni "support" szerepet tölt be, ahol felderít és sebzi távolról az ellenfeleket, viszont a szemtől szembeni csatát kerüli.  A repülőgéphordozó anyahajó a négy égtáj irányában tud mozogni 1 egységet.  A Repülőgéphordozó anyahajó alapvetően 7 "élettel" rendelkezik. </p>
+
+                <p>Repülőgéphordozó anyahajó repülőgéppel és rövid hatótávú torpedóval rendelkezik,különleges fegyvere a helikopter. A repülőgép segítségével minden felszínen lévő hajó pozícióját megtudja állapítani valamint 3 szektort tud ellenőrizni tengeralattjárók után. Továbbá a repülők képesek támadást végezni a felszínen lévő járművekkel szemben, amely repülőt ha nem lőnek le 2 sebzést okoz. A rövid ható távú torpedóit 2 távolságra tudja kilőnni és teli találat esetén 1-et sebez, célja inkább védelmi jellegű. Különleges fegyvere a helikopter amely használható egy szektor ellenörzésére valamint bárhova elszállíthat egy bombát és ledobhatja egy megválasztott mélységbe amely telitalálat estén azonnal megsemmísiti a tengeralatt járót, ellenkező esetben nem sebez egyáltalán. Továbbá a helikoterrel elfoglalható egy sziget abban az esetben ha nem lövik le. A repülőkből 5 darab a helikopterből pedig 2 darab elérhető egy csata során, amelyekből egyszerre csak egy használható.</p>
+                
+                <p>A Repülőgéphordozó anyahajó adott, viszont páncélzattal és vázzal lehet csökkenteni a kapott sebzés mértékét. Páncélból és vázból 3 szint van. Az "alap", az "kemény" és az "acélos" amely a legerősebb. Minden egyes szint 1-el csökkenti a kapott sebzést a rá vonatkozó esetben. </p>
+
+                <p>A Sonar, és a drón a felderítésben segítenek. A sonar segítségével le ellenőrizhetjük hogy egy szektorban tartózkodik-e az ellenfél, a drónnal pedig egy igaz és egy hamis állítást kell adnia az ellenfélnek a pozíciójáról. Itt is kettővel fejletteb rendszerek találhetóak melyek 1-el csökkentik a felkészültségek számát használat előtt. Különleges Képessége amivel felszerelhet az egy olyan repülőgép amelyet egy szektorba kiküldve jelzi hogy ha oda belép egy ellenséges jármű.</p>
+
+                <p>Amennyiben semelyik repülője nincs használatban az "au revoir" képességével 1 irányba tud hármat lépni és a kezdeti pozíciójához képest a másik három irányba lő kis hatótávolságú torpedót. A képesség használatához szükséges a rövid ható távú torpedó készléte is</p>
+
+                <p>Amennyiben egy Repülőgéphordozó anyahajó "karbantartást végez" a karban tartandó rendszerek megjavulnak, cserébe három körből kimarad, valamint nyílvános lesz egy kör erejéig hogy mely szektorban tartózkodik. Cserébe viszont újra elérhető a korábbi útvonala.</p>
+
+            <h4>Tengeralatt járó</h4>
+                <p>Tenger alatt járó feladatta hogy felderítetlenül mozogjon és a mélyből mérjen csapást az ellenségre akkor amikor a leggjobban fáj nekik. A mélybe merülés opciónak köszönhetően amelyel 3000m mélyre tud elmerülni (3x1000) rendkívűl nehéz megállapítani a pozícióját. Viszont ha nem manőverezik megfelelően, az ellenséges csapa könnyedén lokalizálni tudja.  A tengeralatt járó a négy égtáj irányában tud mozogni 2 egységet valamint a mélységét változtatni. A mélység megváltoztatása szintén publikus információ az viszont hogy merült vagy feljött az már nem. A tengerallatjáró alapvetően 4 "élettel" rendelkezik.</p>
+
+                <p>Két fegyverzettel rendelkezik alapból, amely a torpedó és az akna. A torpedó tellitalálat esetén kettőt szomszédos mező estén pedig egyet sebez, valamint 4 egységet mozoghat a torpedó bármilyen irányba minden egyes egység esetén(a saját útvonalát nem érintheti) valamint egyet változtathat a mélységén. Az akna bármelyik szomszédos mezőre elhelyezhető(átlósan szomszédos mező esetén is) és bármikor detonáltatható, teli találat esetén egyet sebez, szomsédos mező esetén pedig felfedi hogy az ellenség benne volt egy szomsédos mezőjében.A tengeralt járó esetén különleges fegyverzet a rakéta, amelyel szigetek bázisait tudja megsemmisíteni vagy a felszínen lévő járművekbe 3 sebzést okozni teli találat esetén, ellenkező esetben 0 a sebzése.  </p>
+                
+                <p>A tengeraltjáró élete adott, viszont páncélzattal és vázzal lehet csökkenteni a kapott sebzés mértékét. Páncélból és vázból 3 szint van. Az "alap", az "kemény" és az "acélos" amely a legerősebb. Minden egyes szint 1-el csökkenti a kapott sebzést a rá vonatkozó esetben. </p>
+
+                <p>A Sonar, és a drón a felderítésben segítenek. A sonar segítségével le ellenőrizhetjük hogy egy szektorban tartózkodik-e az ellenfél, a drónnal pedig egy igaz és egy hamis állítást kell adnia az ellenfélnek a pozíciójáról. Itt is kettővel fejletteb rendszerek taálhetóak melyek 1-el csökkentik a felkészültségek számát használat előtt.</p>
+
+                <p>"Chemin de la souris" azaz "egérút" során a tengeralattjáró úgy tud négyet mozogni egy irányba hogy nem publikus ilyenkor az irány amelybe elment. Ezt a képességet a propeller befolyásolja amely a 2. szinten egyel növeli a ható távot még a harmadik szinten engedélyez egy irányváltoztatást az utolsó lépés során.</p>
+
+                <p>Amennyiben egy tengeralat járó feljön a felszínre a karban tartandó rendszerek megjavulnak, cserébe három körből kimarad, valamint nyílvános lesz egy kör erejéig hogy mely szektorban tartózkodik. Cserébe viszont újra elérhető a korábbi útvonala.</p>
+
+    <h3><a id="3_7"></a>3.7 Csapatok elosztása</h3>
+
+        <p>Fontos hogy a csapatok eloszlásánál figyelembe vegyük a játék módot, amiben meghatározzuk hogy az egyes járművekben kötelező-e a maximumszemélyzet szám. Amennyiben kötelező a maximális személyzet szám, minden egyes pozíciót külön játékosnak kell betöltenie. Ellenkező esetben a játékosnak/játékosoknak előre elkell dönteniük hogy mely pozíciókat fogják betölteni. FOntos korlátozás hogy egy játékos csak egy jármű kezelésében vehet rész, hiszen a való életben sem lehetnek az emberek két helyen egyszerre, valamint az rontanná a játék élmény hosszú távon. Egy április elsejei játékmódban viszont ez a limitáció megszűnik így a játékosok játszhatnak úgy a játékkal hogy nem kell olyan komolyan venni, valamint mint egy kihívásnak sem utolsó</p>
+
+        <p>Minden járműben 4 szerepet kell betölteni. Ezek a kapitány,rádiós,elsőtiszt,mérnök. </p>
+
+
+        <p>A kapitány feledata hogy eldöntse a stratégiát és végrehajtsa azt. A kapitánynak jaték mechanikai szempontból csupán két lehetósége van befolyásolni a játékot. Először is a kapitány dönti el hogy melyik irányba menjen jármű. Ilyenkor a négy égtájat választhatja tehát észak,dél,kelet,nyugat. Továbbá az elérhető akciók közül ő dönti el hogy mozgás helyet használják-e valamelyiket és hogy melyiket. A kapitány kezében tehát olyan lehetőségek állnak amelyekel nagyban befolyásolhatják a csata menetét és a legénység sorsát.  A jó kapitány csak akkor tud győzni ha öszhangban van a legénység többi tagjával és van egy tiszta vízió amelyen mindenki dolgozik és lehetőség szerint ha kell stratégia váltás esetén annak megfelelően reagálnak.</p>
+
+        <p>A rádiós feladata hogy az ellenség lépéseit ismerve felépítsen egy útvonalat és annak segítségével valamint az egyéb megzerzett információkkal lokalizálja az ellenséget és ezzel lépés előnyt adva a kapitány kezébe. Ezt ugy teszi meg hogy feljegyzi am egtett irányokat és a kirajzolódott útvonalat mozgatva a pályán következtet az ellenség pizíciójára. A rádiós feladata kritikus hiszen a  kaptiány csak akkor fog tudni megfelelő stratégiát kidolgozni ha ismeri az ellenség pizícióját. Éppen ezért fontos hogy a kapitány megfelelő akciók végrehajtásával további információt nyújtson a rádiós számára, aki ha megfelően végzi a dolgát akkor betudja határolni az ellenséget. Egy kaptiány aki megfelelően manőverezik viszont megtudja nehezíteni a rádiós dolgát. </p>
+
+        <p>Az első tiszt feladata hogy minden mozást követően elossza az erőforrásait és előkésztse az egyes rendszereket amelyekket a kapitány akcióként kijátszhat. A rendszerek a következőek:Torpedó,akna,Sonar,Drón,Csendes manőver. Az egyes rendszerekről a 3._ Részegységek" fejezetben olvashatunk többet. AZ első tiszt minden lépés során kap 2 erőforrást. Ezeket szabod eloszthatja, viszont érdemes a kapitánnyal egy stratégiát megbeszélni. Minden rendszernek van egy előre meghatározott paramétere, miszerint hány előkészületi lépés kell mielőtt aktiválható. Amennyiben egy rendszert előkészítettek akkor az 2 körig készenléti állapotban marad, utána viszont körönként egy egységgel visszaesik az előkészületek száma. Fontos hogy az adott rendszer készen legyen amikor a kapitány azt használni szeretné. Az egyes rendszerek megfelelő üttembe való használata kulcs fontoságú egy csata kimenetelében.</p>
+       <p>Rendszerek feltöltése(Eredeti játék)</p>
+        <img src="real_systems.jpg" width="1000" height="600"  alt="Italian Trulli" align="top">
+
+        <p>A mérnök feladata hogy működőképes állapotban tartsa a tengeralatt járót, és az elromlott rendszereket megjavítsa. Attól függően hogy milyen irányba haladt a jármű a hozzá tartozó blokkban ki kell kapcsolni egy rendszert, vagy dönthet úgy hogy a motor egységre teszi a terhelés amely öt terhelés után tönkremegy. Ilyenkör kap egy sebzést a jármű és kimarad három körből. A rendszerek össze vannak kötve egymásba az egyes blokkokon átíveleve. Egy biznyos kombináció segítségével viszont a kombinációban lévő összekötött elemek megjavlulnak és újra használhatóak.</p>
+        <p>Karbantartó rendszer(Eredeti játék)</p>
+        <img src="real_eng.jpg" width="1000" height="600"  alt="Italian Trulli" align="top">
+
+        <p>Az egyes feladatok elvégzéséhez külön egyedi felület készül amelyek akár egymás mellet elférnek így biztosítva azt hogy amennyiben egy játékos egyedül irányítja a járművet az megtehesse egy jól átlátható és könnyedén kezelhető kezelő felületen</p>
+
+        <p>Egy csapat csak annyira erős mint a leggyengébb tagja így fontos hogy a játékosok folyamatosan kommunikáljanak egymással annak érdekében hogy egy stratégiát megfelelően kivitelezve megnyerjék a játékot.</p>
+
+    <h3>Szigetek</h3>
+
+        <p>Három féle szigettípus lesz elérhető a játékban. A sima sziget nem rendelkezik semmilyen tulajdonsággal csupán akadály ként van jelen a pályán. A felderítő szigeten egy radar állomás található amely jelzi ha a körülötte kettő távolságra áthalad egy jármű. A retér sziget pedig úgy segíti a csapatot hogy a saját szektorát folyamatosan ellenörzi hogy taálható-e ott ellenséges hajó. Mind a kettő képességel rendelkező sziget jelzi az ellenséges hajók számát.</p>
+
+
+
+    <h3><a id="3_8"></a>3.8 Játék menet</h3>
+
+
+        <p>A játék során két csapat mérkőzik meg egymással. A játék járművek számátől függetlenül addig tart amíg az ellenséges csapat összes járműve megnem semmisult. Ez a fejlesztések során érkezó új játékmódokban változhat, de az alapjátékmódban egyetlen egy cél van ami az ellenség mielőbbi elpusztítása.</p>
+
+        <p>A játék elején a tengeralaltjárók bárhova megválaszthatják a pozíciójukat akkár ugyan arról a mezőről is indulhatnak (ilyenkor természetes nem fedődik fel egyikőjük pozíciója sem), viszont más járművek esetén a pálya két térfélre osztódik hogy az első összecsapás előtt legyen lehetőség helyezkedésre taktikázásra és a csata előkészítésére. A pozíció kiválasztását követően véglegesíteni kell a kiválasztatott pozíciót. A tengeraltt járók mindig 1 egység mélységben indulnak</p>
+
+        <p>Miután mindeki elhelyezte a járművét elkezdődik a csata. Amennyiben 3 percen belül valaki nem helyezte el a járművét azt véletlenszerűen a játék elhelyezni valamely pontján a pályának a szabályoknak megfelelően.</p>
+
+        <p>A játék körökre osztott és egy körben egy csapat összes járműve egyszerre végzi el az akcióit. Egy kör 3 perc után befelyeződik, de a játékosoknak, van lehetőségük a lobby-ban megegyezni egy másik idő intervallumban amelyet a lobby vezetője(létrehozója) állíthat be. Amint lejár az idő, az arra a körre elérhető akcióokat a játékosok már nem játszhatják ki, és átadódik az aktív játékosi szerep az ellenfél csapat játékosaira.</p>
+
+        <p>Egy kör folyamán a járművekkel egy akciót lehet végre hajtani amely lehet mozgás, képesség használata, vagy passzolhatnak. Amennyiben nem sikerül elvégezni a mérnöknek a feladatát hogy kikapcsoljon egy rendszer akkor a motor automatikusan terhelődik egyet.</p>
+
+        <p>Amikor befejeződik egy kör az ellenfél számára 20 másodpercig láthatóak lesznek az ellenfél által választott irányok ennyi ideje van a rádiósnak feljegyezni őket.</p>
+        <p>A játék páyláin vannak szigetek melyek különbözö előnyhöz juttatják a csapatokat. Ezek ellfogalásához az szüskéges hogy a járművel a szigettel szomszédos pontra kell lépni valamint a járműnek a felszínen kell lennie (ez a feltétel a Romboló és a Repülőgép hordozó anyahajó esetén automatikusan teljesül). Ezt követően a következő körben lehetőség van elfoglalni a szigetet ami egy kör akciójának felel meg szóval mást már nem tehet abban a körban az adott jármű.</p>
+
+        <p>Amint megsemmisült az ellenséges csapat összes járműve a csata eldőlt és a nyertes csapat minden jármű után kap egy véletlen szerű alkatrész az elsűlyedt járművekből. Több vsd több jármű esetén csak egy csapat kaphat meg egy adott alkatrészt, az nem duplikálódik.</p>
+
+
+        <p>A játék folyamán a játékosok nem érinthetik a saját útvonalukat. Ere azért van szükség hogy a játékosokat korlátok közzé vonjuk és taktikusabban gondolkodjanak. Tovább ezéltal lehetséges a járművek behatárolása.</p>
+
+        <p>Amennyiben az ellenség sebződott azt mindenki láthatja. Minden információ 10 másodpercig látható. Továbbá ha valamelyik járművet eltalálják vagy benne van a robbanás körzetében arra ugyanúgy hatnak a negatív hatások függetlenül attól hogy saját magát sebzi egy jármű vagy egy szövetésges vagy egy ellenséges járművet.</p>
+
+        <p>A felszínen lévő járművek szomszédos mezőben láthatóak</p>
+
+
+        <p>Véletlenszerűen előfordulhatnak viharok ilyenkor a szomszédos mezőben nem láthatóak az ellenfelek valamint a drónok és repülőgépek nem használhatóak. A vihar bármelyik körben meglyöhet és elmehet. Fontos szabály viszont mind a két csapatot egyenlő mértékben érintse a vihar, tehát Ha az egyik csapatnak két körön keresztül vihar volt akkor nem lehet olyan hogy amikor másik csapatra kerül sor akkor elmúlik a vihar.</p>
+
+  
+        <p>A hajó mindig a kapitányé és az elérhető zsákmányból is ő választhat először. Viszont öt sikeres közös csata után a legénység többi tagja megkapja ugyan azt a járművet "fizetség"-ként</p>
+
+        <p>Egy csatában csapatonként legfeljebb öt jármű vehet részt.</p>
+        <p>Térkép (Eredeti játék)</p>
+        <img src="map2.png" width="1000" height="600"  alt="Italian Trulli" align="top">
+
+
+
+        <h4>Csata</h4>
+        <h4>Prekondíciók</h4>
+
+        <ul>
+              <li>A játkosnak rendelkeznie kell egy fiókkal amely alalpján azonosítható</li>
+              <li>Rendelkeznie kell a játékkal és a JVM-el hogy futtatható legyen</li>
+              <li>A játékosok egy olyan csatát indítottak el amelyben az "Harc!" játékmód be volt állítva</li>
+            </ul>
+
+
+
+        <h4>Postkondíció</h4>
+
+
+            <ul>
+              <li>Elindul a csata</li>
+              <li>Az alap játék szabályok érvényesek</li>
+              
+            </ul>
+
+        <h4>Mainflow</h4>
+
+        <ul>
+              <li>A játkosnak rendelkeznie kell egy fiókkal amely alalpján azonosítható</li>
+              <li>Rendelkeznie kell a játékkal és a JVM-el hogy futtatható legyen</li>
+              <li>A játékosok egy olyan csatát indítottak el amelyben az "HArc" játékmód be volt állítva</li>
+                <li>A lobby-ban a játékmódok menüpontban beállítja az "Harc!" játékmódot</li>
+              <li>Elindul a csata a "Csata indítása" gomb megnyomását követően</li>
+              <li>A járművek a körükben a jármű képességeinek megfelelően léphetnek vagy végezhetnek akciókat</li>
+              <li>Több jármű esetén egy körben egy csapat összes járműve párhuzamosan végzi el a körét</li>
+              <li>A csata addig tart még valamelyik csapat összes járműve megnem semmisült.</li>
+              <li>Csata végén a játékosok minden egyes megsemmisített jármű után kapnak egy részegséget</li>
+            </ul> 
+
+        <h4>AlternateFlows</h4>
+
+            <p>Ha a lobby vezére nem az "Akadály mentesítve!" játékmódott választja ki akkor nem lesz látható a többi jármű pozíciója</p>
+
+            <h4>ExceptionFlows</h4>
+            <p>Egy szerver leállás esetán a játék addigi állapota el mentődik amely később vissza tölthető.</p>
+
+    
+    <h3><a id="3_9"></a>3.9 Játék módok</h3>
+        
+
+        <p>"Látlak!" játék mód keretében az összes játékos pozíciója publikus, ezzel rákényszerítjük a játékosokat egy teljesen más játékmenetre.</p>
+        <h4>Prekondíciók</h4>
+
+
+            <ul>
+              <li>A játkosnak rendelkeznie kell egy fiókkal amely alalpján azonosítható</li>
+              <li>Rendelkeznie kell a játékkal és a JVM-el hogy futtatható legyen</li>
+              <li>A játékosok egy olyan csatát indítottak el amelyben az "Látlak!" játékmód be volt állítva</li>
+            </ul>  
+
+            <h4>Posztkondíció</h4>
+
+            <ul>
+              <li>Elindul a csata</li>
+              <li>A minden jármű pozíciója publikus a játék során</li>
+              
+            </ul>
+
+            <h4>Mainflow</h4>
+
+            <ul>
+              <li>A játkos rákattint a "Csata" gombra a főmenüben.</li>
+              <li>Megnyílik egy ablak ahova ahol csatlakozhat egy lobby-ba vagy létrehozhat egyet</li>
+              <li>A lobby-ban a játékmódok menüpontban beállítja az "Látlak!" játékmódot</li>
+              <li>Elindul a csata a "Csata indítása" gomb megnyomását követően</li>
+              <li>A játkosok lokációja végig publikus mindeki számára, a csata a megszokott módon le</li>li>
+            </ul>  
+
+            <h4>AlternateFlows</h4>
+
+            <p>Ha a lobby vezére nem az "Látlak!" játékmódott választja ki akkor nem lesz látható a többi jármű pozíciója</p>
+
+            <h4>ExceptionFlows</h4>
+            <p>Egy szerver leállás esetán a játék addigi állapota el mentődik amely később vissza tölthető.</p>
+
+            <p>"Akadály mentesítve!" játék mód keretében a játékosok érinthetik saját útvonalukat</p>
+        <h4>Prekondíciók</h4>
+
+
+            <ul>
+              <li>A játkosnak rendelkeznie kell egy fiókkal amely alalpján azonosítható</li>
+              <li>Rendelkeznie kell a játékkal és a JVM-el hogy futtatható legyen</li>
+              <li>A játékosok egy olyan csatát indítottak el amelyben az "Akadály mentesítve!" játékmód be volt állítva</li>
+            </ul>  
+
+            <h4>Posztkondíció</h4>
+
+            <ul>
+              <li>Elindul a csata</li>
+              <li>A minden jármű érintheti saját útvonalát</li>
+              
+            </ul>
+
+            <h4>Mainflow</h4>
+
+            <ul>
+              <li>A játkos rákattint a "Csata" gombra a főmenüben.</li>
+              <li>Megnyílik egy ablak ahova ahol csatlakozhat egy lobby-ba vagy létrehozhat egyet</li>
+              <li>A lobby-ban a játékmódok menüpontban beállítja az "Akadály mentesítve!" játékmódot</li>
+              <li>Elindul a csata a "Csata indítása" gomb megnyomását követően</li>
+              <li>A járművek érintehtik a saját útvonalukat, a csata során</li>
+            </ul>  
+
+            <h4>AlternateFlows</h4>
+
+            <p>Ha a lobby vezére nem az "Akadály mentesítve!" játékmódott választja ki akkor nem lesz látható a többi jármű pozíciója</p>
+
+            <h4>ExceptionFlows</h4>
+            <p>Egy szerver leállás esetán a játék addigi állapota el mentődik amely később vissza tölthető.</p>
+
+
+            <p>"Ninjcsenek határok" játékmód esetén bárhova elhelyezhetőek a járművek nincsenek térfelek, így a csata sokkal kaotikusabb és gyorsabb és intenzívebb játékot eredményez</p>
+
+
+
+    <h3>Véletlen szerűen generált pályák </h3>
+
+        <p>Lehetőség lesz véletlenszerűen generált pályákon játszani ahol ahol a szigetek elhelyezkedése véletlen szerű.</p>
+        <p>Minden ilyen pályán egy darab repülőtér típusú valamint 3 darab radar tipusú sziget lesz a pályán.</p>
+
+    <h3>Statisztikák és adatok</h3>
+        <p>Az összes lejátszott csata minden lépéssel és akcióval együtt tárolódik. A játékosok ezen adatokat bármikor elérhetik. Más játékosok adatait nem kérhetik le.</p>
+        <p>A játékosok nem csak nyers formában kérhetik le az adatokat hanem feldolgozva is. Ilyenkor elküldjük a játékos kliensének a nyers adatokat és azt a felhasználó eszközén feldolgozza.</p>
+        <p>A kimutatást a játékos lementheti és bármmikor kérhet új kimutatást</p>
+
+    <h3>Fizetés</h3>
+        <p>A játékosnak havonta 1 eurót kell fizetnie a játék használatához.</p>
+        <p>Ezt paypal-on keresztül teheti meg.</p>
+
+        <h4>Prekondíciók</h4>
+            <p>A felhasználó rendelkezik egy felhasználói fiókkal</p>
+            <h4>Postkondíció</h4>
+            <p>Elérhető a játék online funkciói</p>
+        <h4>Mainflow</h4>
+            <ul>
+              <li>A játkos rákattint a "Fizetés" gombra a főmenüben.</li>
+              <li>Egy felugró ablakon elvégzi a vizetést</li>
+              <li>Amint átérkezett a pénz a játékosnak aktiválódik az előfizetése</li>
+            </ul> 
+
+        <h4>AlternateFlows</h4>
+            <p>A felhasználó nem megfelelő összeget küld, ilyenkor elküldöttmösszegnek megfelelő hónapnyi előfizetést kap. Amennyiben nem küldött eleget kibővítheti.</p>
+
+        <h4>ExceptionFlows</h4>
+            <p>Valamilyen ok folytán nem érkezett meg a pénz viszont a felhasználótól már levonták. Ilyenkor fel kell venni a kapcsolatot a ffejlesztőkkel.</p>
+        
+
+
+
+<h2><a id="4"></a>4. Használhatóság</h2>
+
+<p>A felhasználói felület egyszerű,letisztult és egyértelmű. Szeretnénk olyan játékosokat is megcélozni akik még soha nem játszottak videójátékokkal. Ők nem rendelkeznek semmilyen előzetes tudással azzal kapcsolatban, hogy hogyan kell ellindítani egy játékot vagy játszani a játékot(irányítás,vezérlés,lövés,stb), így midnennek egyértelműnek kell lennie, és nem elronthatónak mondhatni "fool proof"-nak. Továbbá maga a játék relatíven egyszerű, mivel egy társasjátékon alalpszik így nincs szükség gyors reakcióidőre mint például egy quake játékban, így a casual játékosok is könnyedén elsajátíthatják a játék fortélyait. </p>
+
+<p> Egy tapasztaltabb felahsználó már néhány perc használat után könnyedén használni tudja majd az alkalmazást hiszen rendelkezni fog a megfelelő előtudással. A játék szabályainak megtanulássa feltehetően hasonló nehézségeket kell hogy okoz bármelyik játékosnak függetlenül a játékokkal való tapasztalatától.</p>
+
+<p>Maga a játék szabálya nem nehéz. Gondolhatunk erre úgy mint a sakkra. A játék egyszerű és bármikor játszhatunk egy könnyed mérkőzést, viszont mesterévé válni egy kifejezetten nehéz feladat.</p>
+
+<p>Ha egy játékosnak fogalma sincs semmiről a játékkal kapcsolatban, és úgy indít el egy játkot akkor sem lesz nagy gondban. A felhasználó számára egyértelmű lesz hogy akkor végzett el minden feladatot ha az összes jelzőlámpa zöld és nem piros. Az egyes feladatokat pedig vélelenszerűen is el lehet végezni, amely ugyan nem optimális viszont hamar megfogja értenni az egyes részfealdatok funckcióit a játékban.</p>
+
+<p>Természetesen a felhasználói felület valamelyest hasonló lesz más jákokéhoz, hiszen ha nagyon eltérnénk az sokak számára idegenül hatna ami egy rendkívül rossz első benyomás lenne és kvesebben próbálnák ki a játékot. Az a célunk hogy könnyedén felismerhető legyen a kezelőfelület mindenki álltal.</p>
+
+<p>Az új játékosoknak lehetőségük lesz egy dokumentációt elolvasva megtanulni a játék szabályait és a program hazsnálatát.</p>
+
+
+<h2><a id="5"></a>5. Megbízhatóság</h2>
+
+        <P>A Rendszerünk megvétel után előre láthatóan 95%-ban használható lesz. A maradék 5%-ot pedig az esetleges frissítések és bugfixek fogják kitenni.</P>
+        <p>Karbantartási idő 1-3 napot venne igénybe, ilyenkor nem lenne természetesen elérhető a rendszer.</p>
+        <p>Az MTBF, azaz hibák között eltelt átlagos idő lehetőség szerint nagyon magas lenne, azaz jól megírnánk a programot.</p>
+        <p>Az MTTR, azaz egy hiba utáni javítás átlagos ideje viszont kevés lenne az első 3 hónapban, utánna pedig több, hiszen nem lehet egy kis csapatnak felügyelni egy játékot a végtelenségig, ha más projektbe kezdenénk.</p>
+        <p>Programunkat saját kézzel írjuk, ezért a számítások precízitásáért mi felelünk. Ez alapján mindent megfogunk tenni, hogy optimális és precíz kódok szülessenek.</p>
+        <p>Fontos még megemlíteni, hogy a rendszert miután launcholtuk, szeretnénk, ha nem lennének szerver vagy egyéb problémák, amik elrontanák, vagy ellehetetlenítenék a játékélményt.</p>
+        <p>A hackerekkel szembeni védekezés is kulcsfontosságú, ezért nekik ellenálló programot tervezünk.</p>
+        <p>Előfordulhat túlterheléses támadás, nos az ellen is próbálunk tenni, bár nem biztos, hogy sikerül.</p>
+        <p>Esetleg a forráskód veszélybe kerülhet, de erre is gondoltunk. Nem férhet hozzá, csak akinek van joga.</p>
+
+<h2><a id="6"></a>6. Teljesítmény</h2>
+    <p>A játékunkkal a tervek szerint maximálisan kb. 1000 játékos tud egyidejűleg játszani, de az átlagos játékosszám
+        feltételezéseink szerint kb. a fele lenne ennek, azaz 500 fő.</p>
+    <p>A játékunknak továbbá nem lenne nagy gépigénye sem, azaz amit ajánlunk a játékhoz az egy intel core i5 4-5.
+        generáció vagy amd oldalról a vele ekvivalens amd ryzen 5. Videókártya tekintetében egy nvidia 750ti vagy egy
+        amd radeon rx 560
+        simán tudná futtatni. RAM tekintetében viszont 4 GB-nál nem kell több. Merevlemez méreteket nézve szintén egy
+        viszonylag alacsony gépigényt állítottunk be hiszen 5 GB-on nyugodtan el kéne férnie a programunknak.</p>
+    <p>Válaszidők tekintetében igyekszünk minimálisat tartani, mert így sokkal élvezetesebb lesz a játék. A válaszidő az
+        internet sebességén fog múlni, ezért ha valakinek lassabb az internet kapcsolata az nagyban be tudja folyásolni
+        a válaszidőt. De nem kell sok számítást végezni ezért egész alacsonyak lehetnek a válaszidők.</p>
+    <p>Az áteresztőképesség is szintén az internet sebességén fog múlni, mert azon keresztül fogja megkapni a
+        felhasználó az adatokat a szervertől, melynek sebességét elsősorban másodpercentként egy lekérés, hogy
+        feleslegesen ne terheljük a szervert.</p>
+    <p>A játékunk egy Java alapú alkalmazás, amelyet a IntelliJ Ultimate diákok számára fenntartott fejlesztői
+        környezetében írtunk. A játékunk a JavaFX grafikus könyvtárat használja a felhasználói felület megjelenítéséhez,
+        valamint a JFoenix és a ControlsFX kiegészítőket a stílus és a funkciók bővítéséhez. A játékunk a Java Sound
+        API-t használja a hangok lejátszásához, valamint a JLayer és a MP3SPI könyvtárakat az MP3 formátum
+        támogatásához. A játékunk a Java RMI-t használja a távoli eljáráshívásokhoz, valamint a Java NIO-t a nem
+        blokkoló be- és kimeneti műveletekhez. A játékunk a MySQL adatbázis-kezelő rendszert használja az adatok
+        tárolásához és lekérdezéséhez, valamint a JDBC-t az adatbázis-kapcsolat létrehozásához és kezeléséhez.</p>
+
+
+<h2><a id="7"></a>7.Captain Sonar Szoftver Támogatottsága és Karbantartása</h2>
+    
+    <h2>Bevezetés</h2>
+    <p>A Captain Sonar szoftver támogatottsága és karbantartása kulcsfontosságú az ügyfelek elégedettsége és a rendszer hatékony működése szempontjából. Ebben a dokumentumban részletesen tárgyaljuk a támogatás és karbantartás legfontosabb aspektusait, beleértve a kódolási szabványokat, konvenciókat és a karbantartást segítő segédalkalmazásokat.</p>
+    
+    <h2>Kódolási szabványok és konvenciók</h2>
+    <p>A Captain Sonar fejlesztése során szigorú kódolási szabványok és konvenciók betartása elengedhetetlen. Ennek célja a kód egységességének és olvashatóságának biztosítása, ami megkönnyíti a karbantartók munkáját és hozzájárul a hibák gyorsabb azonosításához. A kódolási szabványok magukban foglalják a változók és függvények elnevezését, a behúzásokat, a kommentek elhelyezését és más formai követelményeket.</p>
+    
+    <h2>A karbantartók munkáját segítő segédalkalmazások</h2>
+    <ul>
+        <li><strong>Verziókezelő Rendszerek (VCS):</strong> Például Git, amely lehetővé teszi a változtatások nyomon követését, a különböző verziók kezelését és a csapatmunkát.</li>
+        <li><strong>Kódellenőrző Eszközök:</strong> Ilyen eszközök, például ESLint vagy Pylint, segítenek automatizáltan ellenőrizni a kódot a kódolási szabványok, teljesítmény és hibák szempontjából.</li>
+        <li><strong>Folyamatos Integráció és Folyamatos Szállítás (CI/CD) Rendszerek:</strong> Mint például Jenkins vagy CircleCI, ezek a rendszerek automatizálják a kódellenőrzést, az egységteszteket és a folyamatos integrációt, ami biztosítja a kód minőségét és stabilitását.</li>
+        <li><strong>Dokumentációs Eszközök:</strong> Például Sphinx segítségével könnyen készíthető részletes technikai dokumentáció, amely segíti a karbantartókat az új fejlesztések megértésében és a rendszer működésének dokumentálásában.</li>
+    </ul>
+    
+    <h2>Rendszeres kód- és teljesítményelemzés</h2>
+    <p>A karbantartók felelősek a rendszeres kód- és teljesítményelemzés végrehajtásáért. Ehhez használhatnak olyan eszközöket, mint a Profiler vagy a CodeClimate, amelyek segítenek azonosítani a lassú vagy ineffektív kódrészleteket, valamint az esetleges memóriaproblémákat.</p>
+    
+    <h2>Rendszermonitoring és hibakeresés</h2>
+    <p>Implementálhatunk rendszermegfigyelő eszközöket és naplózási rendszereket, amelyek figyelik a rendszer teljesítményét és értesítik a karbantartókat, ha problémák merülnek fel. A strukturált naplózási gyakorlatok segítenek azonosítani és gyorsan kijavítani a hibákat.</p>
+</body>
+
+
+<h2><a id="8"></a>8. Tervezési korlátozások</h2>
+
+
+
+<p>Az alkalmazás elkészítése természetesen nem egyetlen rész elkészítéséből fog állni. Megfelelő körültekintéssel szétválasztjuk az egyes funkciókat és azokat megfelelően integráljuk egyetlen applikációban.
+Ezen részegységeket külön-külön készítjük el, teszteljük, majd végül összhangoljuk őket. </p>
+
+<p>Az első részegség amelyet le kell fejleszteni az a szerverrel történő kommunikáció. Először is szükségünk van egy szerverre amely egy szimpla Ubuntun csinálunk Java segítségével egy szervert . A szerverre legy API-on keresztül tartjuk a kapcsolatot és minden másodperceben lekérdezzük a játék állapotát. Annak érdekében hogy kevesebb erőforrást emésszünk fel azzal hogy sok lekérdezés történik, megoldható lenne úgy is hogy megvárjuk még az ellenfél befejezte a körét és csak akkor automatikusan küldjük a játék frissített állapotát. A folyamatos lekérdezést azzal indokoljuk hogy az elküldött játék állapotát a felhasználó gépén értékeljük ki, így a szerver oldalon viszonylag kevés számítást kell elvégezni és csak a hálózat terhelődik. Továbbá ha nem körökve osztva játszanak a játékosok kénytelenek vagyunk ehhez a megoldáshoz folyamodni. Éppen ezért ahelyett hogy két megoldást fejlesztenénk csak egyett fejlesztünk ami csökkenti a hiba lehetőségét.</p>
+
+<p>A következő részegység amelyet el kell készíteni az a chat rendszer, amely független lesz a fentebb leírt rendszertől. Itt csak akkor szeretnénk frissíteni az üzenő falat ha valóban változás történt így a szerver csak akkor fogja elküldeni az üzenetet ha valaki írt a chatbe. </p>
+
+<p>Most úgy tűnhet hogy ellentmondunk magunknak hiszen fentebb még arról beszéltünk hogy a szerverrel történő kommunikációt nem szeretnénk úgy megvalósítani mint ahogy azt az előbb leírtuk. Viszont nincs ellentmondás hiszen a chat rendszer egy teljesen független alkalmazás amely a játéktől függetlenül is működhet akár, így értelmet nyer a különböző megodlások használata.</p>
+
+<p>Fontos a grafikus részegység amelynek egyetlen feladata van hogy egy olyan felületet biztosítson a felhasználónak amely intuitív és kellemes ránézni. Ezt JavaFx segítségével szeretnénk megvalósítani.
+Továbbá ez a felület biztosít kommunikációt és a háttérben futó játék mögött. Eza részegység kritikus abból a szempontból hogy a felhasználó megfelelően tudjon játszani a játékkal.</p>
+
+<p>Végül pedig maga a játék amely a grafikus felülettől és a szervertől kapott információka lalpjánk elvégzi a szükséges számításokat és lépéseket.</p>
+
+<p>A fejlesztés során a Java objektum orientált nyelvet valamint a python programozási nyelvet fogjuk használni. A Java objektum orientáltságából adódóan jól használható játék fejlesztésre, továbbá számos könyvtárral és funkcióval rendelkezik. A python programozási nyelvet a szerverrel történő kommunikációhoz használjuk. Mivel maga a kommunikáció nem egy komplex feladat, valamint nem kell hozzá elkészítenünk egy hatalmas alkalmazást, űgy döntöttünk hogy kihasználjuk a pythonnak azon előnyét hogy gyorsan el lehet benne készíteni programokat, akár csak proof of concept-ként. Amennyiben későbiekben űgy döntünk könnyedén újra tudjuk fejleszteni ezen részét a játéknak hiszen eleve külön modul-ként készítettük el.</p>
+
+<p>A fejlesztés során az intelliJ Ultimatet használjuk amelyet minden egyes fejlesztőnk használt már korábban. Továbbá számtalan funkcióval rendelkezik amelyek megkönnyítetik a fejlesztés mint például a debugolást segítő tool-ok vagy a beépített git verziókezelő renszer ésm ég sok más. A verzió kezeléshez git-et használunk, a kódot pedig mgithubon vezetjük.
+
+<p>A szerver oldalon az adatbázist SQLite-al valósítjuk meg,mivel opensoure, inygenesen használható, és az adatok mennyisége nem akkora hogy ne tudná az sqlite kezelni. Továbbá ha szügséges valamilyen okból más adatbázis kezelő rendszerre váltani az is megoldahtató, hiszen vagy tudja más rendszer értelmezni vagy átkonvertálható.</p>
+
+<p>A fejlesztés során a vízesés modellt használjuk. Ahhoz hogy megfelelően tudjuk lefejleszteni a játékot fontos hogy tisztábban legyünk előre a játék működéseivel és részfunkciójival. Továbbá hogy ezeket megfelelően összetudjuk hangolni, előre kell ismernünk azt milyen esetekben mely más komponensekkel kell együtt dolgoznia az adott programrésznek. Azt követően hogy elkészült a szoftver valamelyest lazulnak a feltételei a további funkciók implementálásának, hiszem már csak az adott részegységet kell megvizsgálni a megfelelő környezetben. A fejlesztés során rendszeresen hetente kétszer megbeszéléseket tartunk, hogy mindenki tisztában legyen hogy merre haladjon a fejlesztrés valamint hogy kiszűrjük az esetleges hibákat.</p>
+
+<h2><a id="9"></a>9. On-line dokumentáció és Help rendszer</h2>
+<p>Mivel olyan felhasználóknak is szánjuk ezt a játékot, akik nem feltétlen játszottak vagy ismerik az eredeti
+    <strong>Captain Sonar</strong> nevű társasjátékot, ezért a játékszabály megtalálható lesz a játékunkban, hogy mi
+    hogy működik, ezen felül még ki is egészítettük a játékot pár új funkcióval, mint például a tengeralattjáróval
+    nem csak a víz fölé és víz alá lehet merülni, hanem a vízben lejjebb is lehet menni, és ennek a működése is le
+    lesz írva. Ezen kívül ha valami kérdése lenne a felhasználónak biztosítunk egy felületet, ahol visszajelzést
+    küldhet, ha valami olyat tapasztal, ami szerinte nem megfelelő, valamint ha bármi kérdése van akkor is fordulhat
+    hozzánk bátran.
+</p>
+<p>A játékunkat úgy terveztük, hogy könnyen megérthető és élvezhető legyen mindenki számára, akár ismeri, akár nem
+    az eredeti társasjátékot. A játékunkban részletes és könnyen hozzáférhető játékszabályt találhatsz, amely
+    elmagyarázza a játék alapjait és a különböző funkciókat. A játékunkban új és érdekes elemeket is bevezettünk,
+    mint például a mélységi szintek, a különböző fegyverek és a különleges képességek. A játékunkban segítséget és
+    tippet is kaphatsz, ha elakadsz vagy nem értesz valamit. A játékunkban visszajelzést és kérdést is küldhetsz
+    nekünk, ha valami nem tetszik vagy valami érdekel. A játékunkban barátságos és segítőkész közösséget találhatsz,
+    akikkel együtt játszhatsz és beszélgethetsz. A játékunkban szórakozást és tanulást is garantálunk, hiszen a
+    játékunk nemcsak izgalmas, hanem tanulságos is.</p>
+
+<h1><a id="10"></a>10. Felhasznált kész komponensek</h1>
+    <h2><a id="10_1"></a>10.1. Grafikus elemek:</h2>
+    <p>Mivel a játék kétdimenziós, a grafikát pedig nem folyamatosan
+      generálja a program, ezért előre elkészített elemeket használunk
+      fel, amiket részben mi készítünk, részben pedig interneten
+      keresünk szabadra licenszelt grafikákat (<i>például a </i><i><a
+          moz-do-not-send="true" href="https://www.freepik.com">https://www.freepik.com</a></i><i>-on</i>).<br>
+    </p>
+    <p>A felhasználói grafikus felület elkészítéséhez a <b>JavaFX</b>
+      van segítségünkre, ami egy nyílt forráskódú, következő generációs
+      kliens-alkalmazásplatform asztali, mobil és beágyazott rendszerek
+      számára, Java-ra épülve. Célja egy modern, hatékony és teljes körű
+      eszköztár létrehozása a gazdag kliens alkalmazások fejlesztéséhez.
+      Ez a keretrendszer egy kiváló választás a Captain Sonar
+      vizualizációjának fejlesztéséhez, mert lehetőséget kínál a modern
+      és professzionális grafikus felhasználói felületek (GUI)
+      kialakítására. A JavaFX egy könnyen tanulható és használható
+      keretrendszer, amely lehetővé teszi a fejlesztők, vagyis
+      számunkra, hogy gyorsan és hatékonyan hozzunk létre egy esztétikus
+      és felhasználóbarát vizuális élményt.<br>
+      A Java nyelvből eredendő platformfüggetlensége révén a JavaFX gond
+      nélkül futtatható a különböző operációs rendszereken, ami fontos
+      ahhoz, hogy a játék minden felhasználó számára elérhető legyen. A
+      JavaFX modern dizájnelemeket és funkciókat biztosít, amelyek
+      lehetővé teszik az animációk, interaktív elemek és egyéb vizuális
+      elemek könnyű integrálását.<br>
+      Emellett a keretrendszer támogatja a modern eszközökkel való
+      együttműködését, például az IntelliJ IDEA-val, amit mi is
+      használunk a program Java nyelven íródó részének fejlesztése
+      során. Ennek köszönhetően hatékonyan dolgozhatunk a projektjükön.<br>
+      A JavaFX-hez tartozó aktív közösség és dokumentáció segíti
+      bennünket, hogy megfelelően kiaknázzuk a keretrendszer adta
+      lehetőségeket, és könnyen találjunk segítséget, ha szükségünk van
+      rá.</p>
+    <p><i>(részletek: </i><i><a moz-do-not-send="true"
+          href="https://openjfx.io/index.html">https://openjfx.io/index.html</a></i><i>)<br>
+      </i></p>
+    <p>Amennyiben nem tudunk megfelelő elemeket készíteni/találni, szóba
+      kerülhet egy külső grafikus bevonása a feladatba, de
+      költségtakarékossági szempontból próbáljuk ezt a lehetőséget
+      elkerülni.</p>
+    <h2><a id="10_2"></a>10.2. Játék:</h2>
+    <p>A Captain Sonar társasjáték története az 1980-as évek elejére
+      vezethető vissza, amikor a játék ötlete még egy egyszerűbb
+      formában keletkezett. Az alapötlet az volt, hogy két csapat,
+      mindkét oldalon egyfajta tengeralattjáró-vadász játékot játszik.
+      Az mindkét csapat irányítja a saját tengeralattjáróját, közben az
+      ellenséges csapat hajóját próbálja megtalálni és elsüllyeszteni
+      azt.<br>
+      Az ötletet Roberto Fraga és Yohan Lemonnier, a francia
+      játéktervezők dolgozták tovább, ők álmodták meg a Captain Sonar
+      egészét. A játék 2016-ban jelent meg a Matagot kiadó gondozásában.<br>
+      A játék megjelenése után hamar népszerűvé vált a társasjátékos
+      közösségekben, részben a játék izgalmas és egyedi koncepciója,
+      valamint a csapatmunkára és a kommunikációra épülő dinamikája
+      miatt. A játék gyors tempójú és interaktív élményt nyújt, ahol a
+      csapatoknak együtt kell dolgozniuk a sikeres taktikák kidolgozása
+      érdekében.<br>
+      Így a játékunk alapja, a Captain Sonar egy már elkészített, létező
+      és sikeres társasjáték. Ezt az alapelemein és szabályain nem
+      változtatva emeljük a programba, egy-egy új funkcióval/elemmel
+      kiegészítve, azt remélve, hogy sok embert meg tudunk vele
+      szólítani.<br>
+    </p>
+    <h2><a id="10_3"></a>10.3. A program alapja:</h2>
+    <p>Programunk jelentős részét java nyelvben írjuk. Az <b>IntelliJ
+        IDEA</b> egy olyan fejlesztői eszköz, amely támogatva ezt a
+      nyelvet számos előnnyel jár számítógépes játék írásánál. A
+      kódszerkesztő és a fejlesztői eszközök széles skáláját kínálja,
+      így&nbsp; segít a kódolási folyamat egyszerűsítésében és
+      felgyorsításában is. Kiváló debuggolási eszközökkel rendelkezik,
+      amelyek segítenek azonosítani és javítani a hibákat. A
+      projektkezelés és a verziókezelés is könnyen kezelhető az IDEA
+      segítségével, ami ebben a csoportmunkában is nagy segítség lehet.<br>
+      <br>
+      Az IntelliJ IDEA oktatásban résztvevőknek (így oktatóknak és
+      diákoknak egyaránt) ingyenes, ennek vannak bizonyos <u>feltételei</u>:<br>
+    </p>
+    <ul>
+      <li>
+        <p>csakis oktatási projektekhez lehet használni, kereskedelmi
+          célokra nem</p>
+      </li>
+      <li>
+        <p> amíg valaki oktatásban részt vesz, addig megújíthatja
+          ingyenesen előfizetését</p>
+      </li>
+      <li>
+        <p>nem használható fel semmilyen szervezet termékeinek vagy
+          szolgáltatásainak fejlesztésére</p>
+      </li>
+      <li>
+        <p>nem osztható meg harmadik féllel</p>
+      </li>
+    </ul>
+    <p>Ezen kritériumok betartásával viszont kiváló lehetőséget nyújt ez
+      a program, mint ahogy számunkra is.<br>
+    </p>
+    <p><i>(részletek: </i><i><a moz-do-not-send="true"
+          href="https://www.jetbrains.com/community/education/#students">https://www.jetbrains.com/community/education/#students</a></i><i>)<br>
+        <br>
+      </i></p>
+    <h2><a id="10_4"></a>10.4. AI:</h2>
+    <p>A programban egyes funkciók mesterséges intelligencia
+      segítségével működnek. Ezeket AI-okat a hozzá legalkalmasabb
+      nyelvben, <b>Python</b>-ban fejlesztjük, mivel a Python egy
+      rendkívül rugalmas és könnyen tanulható nyelv, amely ideális a
+      gyors és hatékony kódszerzéshez. A Python támogatásával
+      lehetőségünk van az AI részletes megvalósítására, mivel könyvtárak
+      széles gyűjteményét kínálja, amelyek segítenek az adatelemzésben,
+      az adatok megjelenítésében és a modellépítésben.</p>
+    <p>A Pythonban megírt programrészeket az ingyenesen letölthető <b>Visual
+
+
+
+
+        Studio Code</b> alkalmazás segítségével írjuk meg, mely egy
+      ingyenes, nyílt forráskódú kódszerkesztő, amit a Microsoft
+      fejleszt Windows, Linux és macOS operációs rendszerekhez.
+      Támogatja a hibakeresőket, valamint beépített Git támogatással
+      rendelkezik, így különösen jól megfelel a feladat elkészítéséhez.
+      A VSCode-ban lehetőségünk van megváltoztatni a kinézetet (témát),
+      a szerkesztő gyorsbillentyű-kiosztását, az alapértelmezett
+      beállításokat, ezzel a fejlesztőcsapat minden tagja be tudja
+      állítani szükséglete szerint. Támogatja a kiegészítőket, melyek
+      segítségével további funkciók, testreszabási lehetőségek érhetőek
+      el. Ezek közül négyet, a <b>Scikit-learn</b>-t és a <b>PyTorch</b>-ot,
+
+
+
+
+      a <b>Pandas</b>-t és a <b>NumPy</b>-t a projektünk során mi is
+      folyamatosan használunk.<br>
+      <i>(részletek: </i><i><a moz-do-not-send="true"
+          href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></i><i>)</i><br>
+    </p>
+    <p>A <b>Scikit-learn</b> egy hatékony és népszerű gépi tanulás
+      könyvtár, amely segít különféle AI algoritmusok implementálásában.
+      Ezen keretrendszer használatával az AI fejlesztése során könnyedén
+      alkalmazhatunk különböző gépi tanulási algoritmusokat. A
+      Scikit-learn kiterjedt választékot kínál a felügyelt és
+      felügyeletlen tanulásban egyaránt, beleértve a klasszikus gépi
+      tanulási módszereket, mint például a döntési fák, k-NN(k-Nearest
+      Neighbors), és SVM (Support Vector Machines). Ez segít abban, hogy
+      az AI ellenfelünk intelligensen és változatosan reagáljon
+      döntéseinkre.<br>
+      A Scikit-learn könnyen integrálható más népszerű Python
+      könyvtárakkal, például NumPy, Pandas és Matplotlib, ami lehetővé
+      teszi az adatfeldolgozás, elemzés és vizualizáció hatékony
+      kombinálását az AI fejlesztése során.<br>
+      Számos online forrás, dokumentáció és fórum elérhető, amely segít
+      a fejlesztés során esetlegesen felmerülő kérdések
+      megválaszolásában, valamint fontos, hogy egy aktívan fejlesztett
+      projekt, amely folyamatosan frissül és újításokkal bővül.<br>
+      <i>(részletek: </i><i><a moz-do-not-send="true"
+          href="https://scikit-learn.org/stable/#">https://scikit-learn.org/stable/#</a></i><i>)</i><br>
+    </p>
+    <p>A <b>PyTorch</b>-ot választottuk a mély tanulás
+      implementációjához. Ez egy nyílt forráskódú mélytanulásos
+      keretrendszer, amelyet a Meta fejlesztett ki. Alapjaiban dinamikus
+      gráf definíciót használ, amely lehetővé tesz neurális hálózatok
+      könnyű tervezését és képzését, a modell dinamikus építését és
+      módosítását futási időben, segítve a fejlesztés közbeni könnyű
+      követhetőséget is. Ez különösen fontos, amikor az AI fejlesztése
+      során különböző komplex stratégiákat és viselkedési mintákat
+      próbálunk megvalósítani a gépi ellenfél számára. Emellett
+      támogatja a statikus gráf definíciót is, így a felhasználók
+      kiválaszthatják a legmegfelelőbb módszert az adott feladathoz.<br>
+      A PyTorch kiemelkedik azért is, mert nagy hangsúlyt fektet a
+      fejlesztőbarát környezet kialakítására és támogatására.<br>
+      <i>(részletek: </i><i><a moz-do-not-send="true"
+          href="https://pytorch.org/join">https://pytorch.org/join</a></i><i>)<br>
+        <br>
+      </i></p>
+    <h2><a id="10_5"></a>10.5. Adatkezelés:</h2>
+    <p>A játék fejlesztése során a Pandas és a NumPy kiváló eszközök az
+      adatfeldolgozás során. Ezek a könyvtárak hatékonyan kezelik az
+      adatokat, amelyekre az AI alapozódik.<br>
+      <br>
+      A <b>Pandas</b> egy magas szintű adatstruktúra és
+      adatfeldolgozási könyvtár, amely lehetővé teszi az adatok könnyű
+      betöltését, tárolását és manipulálását. A játékban felmerülő
+      adatokat, például a játékosok taktikáit, mozgásait és a
+      játékstatisztikákat, könnyen strukturált táblázatokká alakíthatjuk
+      a Pandas segítségével. Az adatok gyorsan és hatékonyan
+      rendezhetők, szűrhetők és csoportosíthatók, amelyek segítik a
+      játék belső logikájának és az AI döntéseinek alapját.<br>
+      <i>(részletek: </i><i><a moz-do-not-send="true"
+          href="https://pandas.pydata.org/">https://pandas.pydata.org/</a></i><i>)</i><br>
+    </p>
+    <p>A <b>NumPy</b> egy másik fontos könyvtár, amely hatékony
+      matematikai műveleteket tesz lehetővé, különösen többdimenziós
+      tömbökkel. A Captain Sonar játék során az AI számára fontos lehet
+      a matematikai számítások elvégzése. A NumPy nagy teljesítményű
+      tömbműveletekkel rendelkezik, amelyek segítenek optimalizálni és
+      gyorsítani ezeket a folyamatokat.<br>
+      <i>(részletek: </i><i><a moz-do-not-send="true"
+          href="https://numpy.org/">https://numpy.org/</a></i><i>)</i><br>
+    </p>
+    <p>A Pandas és a NumPy kombinált használata rendkívül erős
+      adatkezelési eszközöket biztosít számunkra is. Ezek a könyvtárak
+      lehetővé teszik az adatok könnyű és hatékony kezelését, ami
+      hozzájárul a játék dinamikus és jól reagáló AI fejlesztéséhez.<br>
+      <br>
+    </p>
+    <h2><a id="10_6"></a>10.6. Szerver:</h2>
+    <p>A játék rendelkezik online játékmóddal, ehhez viszont
+      elkerülhetetlen egy szerver üzemeltetése. Nekünk az Ubuntu típusú
+      szerverre esett a választásunk, több ok miatt.<br>
+      <br>
+      Az Ubuntu rendszerek kiemelkednek a stabilitásukkal és
+      megbízhatóságukkal. Ezen tulajdonságok elengedhetetlenek az online
+      játékok szervereihez, ahol folyamatos rendelkezésre állásra és
+      minimális leállásra van szükség.<br>
+      A széles körű közösség és dokumentáció segítséget nyújt a
+      szerverkonfigurációhoz és a problémák megoldásához. Az Ubuntu
+      népszerűsége és támogatottsága révén könnyen találhatunk
+      segítséget és megoldást a fejlesztés során felmerülő kihívásokra.<br>
+      Az Ubuntu nyílt forráskódú, ezért egyrészt ingyenes, másrészt
+      rugalmasságot biztosít a szerverkörnyezet kialakításában.<br>
+      Kevés erőforrást igényel, így a rendelkezésre álló erőforrásokat
+      hatékonyan lehet felhasználni a játék szerverek számára.<br>
+      A rendszer biztonsági intézkedései és rendszeres frissítései
+      hozzájárulnak a szerverek biztonságának fenntartásához, ami
+      kulcsfontosságú az online játékok sikeréhez és a felhasználói
+      élmény javításához.<br>
+    </p>
+    <p><i>(részletek: </i><i><a moz-do-not-send="true"
+          href="https://pandas.pydata.org/">https://ubuntu.com/server</a></i><i>)<br>
+        <br>
+      </i></p>
+    <h2><a id="10_7"></a>10.7. Kód tárolása:</h2>
+    <p>A fejlesztés során a folyamatosan bővített program kódját és
+      egyéb adatait a <b>GitHub</b>-on tároljuk. A GitHub egy webes
+      platform és szolgáltatás, amely lehetővé teszi kódok tárolását,
+      verziókezelését és együttműködését szoftverfejlesztési
+      projektekben. Alapvetően a Git nevű verziókezelő rendszert
+      használja, és kiterjeszti annak funkcionalitását, különféle
+      eszközökkel és szolgáltatásokkal, így egy olyan platform, amely
+      tökéletesen illeszkedik a Java-ban fejlesztett játékunk
+      fejlesztési folyamatához.<br>
+      A verziókezelés és verziókövetés révén minden kódmódosítás
+      dokumentált és visszaállítható, így könnyedén nyomon követhető a
+      kód fejlődése. Ez kritikus fontosságú egy fejlődő projekt
+      esetében, különösen, mivel többen fejlesztjük a programot.<br>
+      A fejlesztés során történő változtatások könnyen integrálhatók a
+      központi kódbázisba.<br>
+      Az automatizált építési és tesztelési folyamatok integrációja
+      szintén a GitHub előnyei közé tartozik, lehetővé téve az
+      alkalmazás folyamatos fejlesztését és a hibák korai észlelését.<br>
+      A nyílt forráskódú platform révén ingyenes és könnyen
+      beszerezhető, ami költséghatékony terveinkbe tökéletesen
+      beleillik.<br>
+    </p>
+    <p><i>(részletek: </i><i><a moz-do-not-send="true"
+          href="https://pandas.pydata.org/">https://github.com/</a></i><i>)</i></p>
+    <p> </p>
+
+<h2><a id="11"></a>11. Szoftver Interfészeinek Leírása</h2>
+
+    <h2>Felhasználói interfész:</h2>
+    <p>A felhasználói interfész a Captain Sonar szoftver olyan része, amely lehetővé teszi a felhasználók számára a szoftverrel való interakciót. Ez magában foglalja a grafikus felhasználói felületet (GUI), ahol a játékosok interaktívan navigálhatnak és kezelhetik a játékot. A felhasználói interfész intuitív és felhasználóbarát, biztosítva a zökkenőmentes játékélményt.</p>
+
+    <h2>Hardware interfész:</h2>
+    <p>A hardware interfész a szoftver és a hardver közötti kapcsolatot jelenti. A Captain Sonar szoftver működik olyan hardveres eszközökön, mint számítógépek, okostelefonok és táblagépek. A szoftvernek kompatibilisnek kell lennie a különböző hardverplatformokkal, hogy a felhasználók kényelmesen és hatékonyan használhassák a szoftvert az eszközeiken.</p>
+
+    <h2>Software interfész:</h2>
+    <p>A software interfész a Captain Sonar szoftver és más szoftverek vagy rendszerek közötti kommunikációt biztosítja. Ez lehetővé teszi az adatcserét és az integrációt más szoftverekkel, például adatbázisokkal vagy harmadik féltől származó alkalmazásokkal. A szoftver interfészeinek jól dokumentáltaknak és rugalmasnak kell lenniük, hogy lehetővé tegyék a könnyű integrációt más alkalmazásokkal.</p>
+
+    <h2>Kommunikációs interfész:</h2>
+    <p>A kommunikációs interfész lehetővé teszi a Captain Sonar szoftver kommunikációját külső rendszerekkel vagy távoli felhasználókkal. Ez magában foglalja a hálózati protokollokat és a kommunikációs API-kat, amelyek lehetővé teszik a játékosok számára, hogy online módon játszhassanak egymással. A kommunikációs interfész biztosítja a gyors és biztonságos adatátvitelt a játékosok között, függetlenül attól, hogy azok helyi hálózaton vagy az interneten keresztül kommunikálnak.</p>
+
+    <p>Ezek az interfészek együttesen segítik a Captain Sonar szoftvert abban, hogy hatékonyan működjön, és lehetővé tegyék a felhasználók számára, hogy élvezhessék a játékot különböző eszközökön és környezetekben. Az optimalizált interfészek biztosítják a szoftver megbízhatóságát és rugalmasságát a felhasználók számára.</p>
+</body>
+
+
+
+
+</html>
