@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Analízis modell</title>
+</head>
+
+<style type="text/css">
+    
+table, tr, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  background-color: #96D4D4;
+}
+
+li{
+    margin: 20px 0;
+}
+
+</style>
+
+
+<body>
+  
+<h2>Felhasználói felület (elképzelések)</h2>
+<img src="fomenu.png" width="1000" height="600"  alt="Italian Trulli" align="top">  
+<img src="dock.png" width="1000" height="600"  alt="Italian Trulli" align="top">
+<img src="map2.png" width="1000" height="600"  alt="Italian Trulli" align="top">
+
+
+
+    <h2><a id="3_1"></a>Adatbázis kezelő kiválasztása</h2>
+    <p>Az SQLite egy könnyű súlyú, relációs adatbázis-kezelő rendszer, amelyet a Java programozási nyelvhez is
+        használhatunk. Az SQLite használata során az adatokat fájlban tároljuk, és a rendszer nem igényel külön
+        szerveralkalmazást. Az SQLite használata során az adatbázis-kezelő rendszerrel való kapcsolatot JDBC
+        segítségével hozzuk létre.</p>
+
+    <p>Az SQLite az úgynevezett klasszikus szervernélküli adatbázis-kezelő rendszerek közé tartozik, amely azt jelenti,
+        hogy az adatbázis motor ugyanazon processzuson, szálon és címen fut, mint az alkalmazás. Az SQLite-ban minden
+        adatbázishoz egyetlen adatbázisfájl tartozik, amely platform-függetlenné teszi az adatbázist. Az SQLite
+        önálló, kis méretű (kb. 500 KiB), C forrású programkönyvtárként (library) megvalósított ACID-kompatibilis
+        relációs adatbázis-kezelő rendszer, illetve adatbázismotor. A kliens-szerver architektúrájú adatbázis-kezelő
+        rendszerekkel ellentétben az SQLite motor nem egy különálló folyamat, amellyel a program kommunikál, hanem a
+        program részét alkotja, ahhoz hozzálinkelt programkönyvtár lévén. Dinamikusan is meghívható.</p>
+
+    <p>Az SQLite megvalósítja az SQL-92 szabvány nagy részét, így pl. részlegesen támogatja a triggereket és a legtöbb
+        komplex / összetett lekérdezést, de a referenciális integritási kényszerek használatát csak a 3.6.19 verziótól
+        kezdődően támogatja. Az SQLite nem alkalmazza a hagyományos SQL rendszerekben megszokott szigorú
+        mezőtípus-kezelést: egy adattípus nem egy tábla oszlopaihoz, hanem az egyedi értékekhez van hozzárendelve, más
+        szóval dinamikus típuskezelést használ. Emellett a Perlre emlékeztető gyengén típusos adatkezelés található
+        benne: a mezőknek típus helyett affinitásuk (preferált típus) van. Például string típusú adat beilleszthető
+        integer affinitású oszlopba; ha az SQLite sikeresen tudja konvertálni integerré, akkor úgy tárolja, egyébként
+        meghagyja az adat eredeti típusát.</p>
+
+    <p>Az SQLite-ot kis erőforrásigényű rendszernek tervezték. A lefordított bináris könyvtár mérete (megfelelő
+        paraméterezéssel) 500KiB alá is szorítható, annak ellenére, hogy a kód különböző architektúrák széles skáláján
+        lefordítható.</p>
+
+       <h2><a id="3_3"></a>3.3 Relációs adatmodell</h2>
+    <br>
+    <br>
+    <b>ER modellből relációs modellbe konvertálás tulajdonságai:</b><br>
+    <ul>
+      <li>
+        <p>az egyedekből táblák lesznek</p>
+      </li>
+      <li>
+        <p>az egyedekhez kapcsolódó tulajdonságokkal fel kell tölteni a
+          táblákat a következő módon</p>
+      </li>
+      <ul>
+        <li>
+          <p>a Primary Key, a szimpla, az egyedi és az opcionális
+            tulajdonságok ugyanolyan formátumban átkerülnek (az adott
+            jelölésekkel)<br>
+          </p>
+        </li>
+        <li>
+          <p>a többértékű tulajdonságot úgy írjuk át, hogy a többértékű
+            tulajdonságból leágazó tulajdonságokat visszük csak át</p>
+        </li>
+        <li>
+          <p>a származtatott tulajdonságok relációs modellben nem
+            jelennek meg</p>
+        </li>
+      </ul>
+      <li>
+        <p>a kapcsolatok a következőképpen lesznek megvalósítva</p>
+      </li>
+      <ul>
+        <li>
+          <p><b>1.1 kapcsolat</b> esetén az egyik oldalra bekerül egy
+            Foreign Key nevű tulajdonság, ami a másik tábla Primary
+            Key-ére mutat</p>
+        </li>
+        <li>
+          <p><b>1.N kapcsolat</b>nál ez a Foreign Key szigorúan az N-es
+            oldalra kerül</p>
+        </li>
+        <li>
+          <p><b>N.M kapcsolat</b> esetén egy külön kapcsolótábla jön
+            létre, amely a két Foreign Key-t tartalmazza</p>
+        </li>
+        <li>
+          <p>kötelező kapcsolatot a NOT NULL jelzővel jelöljük az adott
+            oldalon, ahol ez nincs jelölve, az a kapcsolat nem kötelező</p>
+        </li>
+      </ul>
+    </ul>
+    <p><br>
+    </p>
+    <p>Ezek alapján a <a moz-do-not-send="true" href="3_2">3.2.</a>
+      pontban bemutatott ER modell relációs formában a következőképpen
+      néz ki: <br>
+      <img moz-do-not-send="true"
+        src="Rendszertervezes_3.3_(relacios).png" alt="" width="50%"
+        height="60%"><br>
+    </p>
+
+
+</body>
+
+
+</html>
