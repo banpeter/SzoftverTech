@@ -120,6 +120,7 @@ li{
 
 
         <h3><a id="2_1"></a> 2.1 Osztálydiagram</h3>
+        <img src="swtech_jatek.png" width="1000" height="600"  alt="Italian Trulli" align="top">
 
         <h3><a id="2_2"></a> 2.2 Osztályok felsorolása</h3>
                  <p>Járművek</p>
@@ -192,6 +193,8 @@ li{
         Valamennyi eddig felfedezett kapcsolatot megvizsgálunk, nevesítjük, megállapítjuk a szerepköröket és számosságokat.
         <h3><a id="3_1"></a>3.1 Statikus modell</h3>
 
+                <img src="swtech_jatek.png" width="1000" height="600"  alt="Italian Trulli" align="top">
+
                 <h4>3.1.1 Kapcsolatok pontosítása</h4>
 
                         <p>A játék működéséhez számos osztály szükséges a különböző szerepkörök valamint képességek miatt. Nem lehet mindent egy osztályon keresztül megvalósítani ezért gondosan szét kell választani a megfelelő elemeket annak érdekében hogy a jövőben könnyen karbantartható(javítható és módosítható) valamint bővíthető legyen.</p>
@@ -204,7 +207,7 @@ li{
 
                         <p>A Repülőgéphordozó osztály a Jármű osztály specializációja. A játékosok rendelkeznek Repülőgéphordozó anyahajóval valamint azt a csatában is használhatják. Ebből adódóan indokolt létrehoznunk egy külön osztályt a megfelelő metódusokkal hogy az egyes képességeket megvalósítsa metódusokon keresztül.</p>
 
-                        <p>A Romboló osztály a Jármű osztály specializációja. A játékosok rendelkeznek Romboló valamint azt a csatában is használhatják. Ebből adódóan éindokolt létrehoznunk egy külön osztályt a megfelelő metódusokkal hogy az egyes képességeket megvalósítsa metódusokon keresztül.</p>
+                        <p>A Romboló osztály a Jármű osztály specializációja. A játékosok rendelkeznek Rombolóval valamint azt a csatában is használhatják. Ebből adódóan éindokolt létrehoznunk egy külön osztályt a megfelelő metódusokkal hogy az egyes képességeket megvalósítsa metódusokon keresztül.</p>
 
                         <p>A játékos osztályra azért van szükség mert minden felhasználó játszani fog a játékkal és nem csak belép és nézegeti a főmenüt(remélhetőleg). Ahhoz hogy a felhasználókat egy megfelelő keretbe fogjuk és a jétkban értelmezni tudjuk őket hozzuk létre a játékos osztályt. A játékos és a járművek között has_a kapcsolat van.</p>
 
@@ -254,7 +257,7 @@ li{
 
                         <p>Az egyes osztályok definiálását követően szintén fontos hogy milyen attríbútumokkal rendelkezne. Az hogy melyik jármű hány egységet mozog vagy mennyit sebez a torpedójuk az egy fontos adat amelyet  előre kell definiálni.</p>
 
-                        <p>A játékban kulcsfontosságú szerepet játszanak a járművek amelyek a játék gerincét képezik. Minden csatában vannak járművek,minden játékos rendelkezík járművel. Ebből adódóan amennyiben nem megfelelő attríbutumokkal rendelkeznek könnyedén felborulhat ajáték egyensúlya. A Jármű osztály  a következő  attribútumokkal rendelkeznek. motor,fegyverzet(mask),páncél,propeller,allapot </p>
+                        <p>A játékban kulcsfontosságú szerepet játszanak a járművek amelyek a játék gerincét képezik. Minden csatában vannak járművek,minden játékos rendelkezík járművel. Ebből adódóan amennyiben nem megfelelő attríbutumokkal rendelkeznek könnyedén felborulhat ajáték egyensúlya. A Jármű osztály  a következő  attribútumokkal rendelkeznek. motor,fegyverzet(mask),páncél,propeller,javit,utvonal </p>
 
                         <p>A tengeralltjáró osztály a Jármű osztály specializációja. A tengeralattjáró osztály nem rendelkezik külön extra attribútumokkal </p>
 
@@ -262,10 +265,10 @@ li{
 
                         <p>A Romboló osztály a Jármű osztály specializációja. A Romboló osztály nem rendelkezik külön extra attribútumokkal</p>
 
-                        <p>A játékos osztály a következő attribútumokkal rendelkezik:id,felhasználó_név</p>
+                        <p>A játékos osztály a következő attribútumokkal rendelkezik:id,felhasználó_név,tengeralattjáró,romboloó,anyahajó</p>
  
 
-                        <p>A kapitány osztály a   nem rendelkezik külön extra attribútumokkal</p>
+                        <p>A kapitány osztály nem rendelkezik külön extra attribútumokkal</p>
 
                         <p>A rádiós osztály  nem rendelkezik külön extra attribútumokkal</p>
 
@@ -302,7 +305,7 @@ li{
 
         <h3><a id="3_2"></a>3.2. Dinamikus modell</h3>
 
-                <p>Diagram</p>
+                <img src="swtech_szekvencia.png" width="1000" height="600"  alt="Italian Trulli" align="top">
 
 
         <h3><a id="3_3"></a> 3.3. Operációk azonosítása</h3>
@@ -354,9 +357,9 @@ li{
 
                         <p>Az kadály_mentesítve osztály a következő metódusal rendelkezik: setTraceZero</p>
 
-                        <p>A Mitikus osztály a következő metódusaokkal rendelkezik: setMonster()</p>
+                        <p>A Mitikus osztály a következő metódusaokkal rendelkezik: setMonster</p>
 
-                        <p>A TobbJarmu osztály esetén a következő metódusaokkal rendelkezik: setJarmuszam()</p>
+                        <p>A TobbJarmu osztály esetén a következő metódusaokkal rendelkezik: setJarmuszam</p>
 
                         <p>Flottatervező osztály a következő metódusaokkal rendelkezik: setEngine,setArmor,setWeapon,setPropeller,setExtra</p>
 
@@ -366,11 +369,11 @@ li{
 
         <h4>Jármű osztály</h4>
         <ul>
-              <li>Feladata:A jármű osztályból származtatjukaz egyes a játékban használható járműveket. A jármű osztályban definiáljuk a megfelelő adat tagokat és metódusokat, amelyeket később a specializációnak megfelelően ha zsükséges felülírunk.</li>
-              <li>Együttműködik:Tengerallattjáró,Romboló,Anyahajó,Térkép,Játékos</li>
+              <li><b>Feladata:</b>A jármű osztályból származtatjukaz egyes a játékban használható járműveket. A jármű osztályban definiáljuk a megfelelő adat tagokat és metódusokat, amelyeket később a specializációnak megfelelően ha zsükséges felülírunk.</li>
+              <li><b>Együttműködik:</b>Tengerallattjáró,Romboló,Anyahajó,Térkép,Játékos</li>
         </ul> 
 
-        <p>Attribútumok</p>
+        <p><b>Attribútumok</b></p>
 
         <table>
         <tr>
@@ -417,7 +420,7 @@ li{
 
         </table>
 
-        <p>Operációk</p>
+        <p><b>Operációk</b></p>
 
         <table>
                 <tr>
@@ -463,14 +466,14 @@ li{
 
         <h4>Tengeralattjáró osztály</h4>
         <ul>
-              <li>Feladata: tengeralattjáró osztály a játékban jármű ként használható tengelatjáró osztálya amelyet a jármű osztályból származtatunk. A képességeinek megfelelően felül írjük az ősosztály metódusait valamint kibővítjuk azokat hopgy tudjon merülni.</li>
-              <li>Együttműködik: Jármű osztály,Játékos osztály</li>
+              <li><b>Feladata:</b> tengeralattjáró osztály a játékban jármű ként használható tengelatjáró osztálya amelyet a jármű osztályból származtatunk. A képességeinek megfelelően felül írjük az ősosztály metódusait valamint kibővítjuk azokat hopgy tudjon merülni.</li>
+              <li><b>Együttműködik:</b> Jármű osztály,Játékos osztály</li>
         </ul> 
 
         <p>Attribútumok megegyeznek a szülőosztály attribútumaival</p>
 
 
-        <p>Operációk</p>
+        <p><b>Operációk</b></p>
 
         <table>
         <tr>
@@ -488,14 +491,14 @@ li{
     </table> 
                     <h4>Repülőgép hordozó anyahajó osztály</h4>
                 <ul>
-                      <li>Feladata:A Repülőgép hordozó anyahajó osztály a játékban jármű ként használható Repülőgép hordozó anyahajó osztálya amelyet a jármű osztályból származtatunk. A képességeinek megfelelően felül írjük az ősosztály metódusait valamint kibővítjuk azokat hogy rendelekzzen a különleges képességeivel mint a helikopter</li>
-                      <li>Együttműködik:Jármű osztály,Játékos osztály</li>
+                      <li><b>Feladata:</b>A Repülőgép hordozó anyahajó osztály a játékban jármű ként használható Repülőgép hordozó anyahajó osztálya amelyet a jármű osztályból származtatunk. A képességeinek megfelelően felül írjük az ősosztály metódusait valamint kibővítjuk azokat hogy rendelekzzen a különleges képességeivel mint a helikopter</li>
+                      <li><b>Együttműködik:</b>Jármű osztály,Játékos osztály</li>
                 </ul> 
 
         <p>Attribútumok megegyeznek a szülőösztály attribútumaival</p>
 
 
-        <p>Operációk</p>
+        <p><b>Operációk</b></p>
 
         <table>
         <tr>
@@ -513,14 +516,14 @@ li{
     </table> 
                     <h4>Romboló osztály</h4>
                 <ul>
-                      <li>Feladata: A Romboló osztály a játékban jármű ként használható Romboló osztálya amelyet a jármű osztályból származtatunk. A képességeinek megfelelően felül írjük az ősosztály metódusait valamint kibővítjuk azokat hogy tudja használni különleges képességeit mint a robbanó hordó.</li>
-                      <li>Együttműködik:Jármű osztály,Játékos osztály</li>
+                      <li><b>Feladata:</b> A Romboló osztály a játékban jármű ként használható Romboló osztálya amelyet a jármű osztályból származtatunk. A képességeinek megfelelően felül írjük az ősosztály metódusait valamint kibővítjuk azokat hogy tudja használni különleges képességeit mint a robbanó hordó.</li>
+                      <li><b>Együttműködik:</b>Jármű osztály,Játékos osztály</li>
                 </ul> 
 
         <p>Attribútumok megegyeznek a szülőosztály attribútumaival</p>
 
 
-        <p>Operációk</p>
+        <p><b>Operációk</b></p>
 
         <table>
         <tr>
@@ -539,11 +542,11 @@ li{
 
                     <h4>Térkép osztály</h4>
                 <ul>
-                      <li>Feladata:</li>
-                      <li>Együttműködik</li>
+                      <li><b>Feladata:</b> arra szolgál hogy a csata során megtett lépéseket és az egyes objektumok elhelyezkedését számon tartsa. A térkép és az egyes járművek valalmint szigetekkel has_a kapcsolatban van tehát a térkép osztály rendelkezik járművekkel és szigetekkel.</li>
+                      <li><b>Együttműködik:</b>játék,játékos,sziget,jármű</li>
                 </ul> 
 
-        <p>Attribútumok</p>
+        <p><b>Attribútumok</b></p>
 
         <table>
         <tr>
@@ -563,7 +566,7 @@ li{
         </tr>
 
         </table>
-        <p>Operációk</p>
+        <p><b>Operációk</b></p>
 
         <table>
         <tr>
@@ -582,11 +585,11 @@ li{
     </table> 
                     <h4>Sziget osztály</h4>
                 <ul>
-                      <li>Feladata:A sziget osztályból származtatjuk a töbi sziget típust. A szigetek egy csata térképén vannak ahol vagy szmplán akadályként vagy valmilyen funkcót betöltve szerepelnek</li>
-                      <li>Együttműködik:Játék,Térkép</li>
+                      <li><b>Feladata:</b>A sziget osztályból származtatjuk a töbi sziget típust. A szigetek egy csata térképén vannak ahol vagy szmplán akadályként vagy valmilyen funkcót betöltve szerepelnek</li>
+                      <li><b>Együttműködik:</b>Játék,Térkép</li>
                 </ul> 
 
-        <p>Attribútumok</p>
+        <p><b>Attribútumok</b></p>
 
         <table>
         <tr>
@@ -606,7 +609,7 @@ li{
         </tr>
 
         </table>
-        <p>Operációk</p>
+        <p><b>Operációk</b></p>
 
         <table>
         <tr>
@@ -634,14 +637,14 @@ li{
 
                     <h4>Repülőtért osztály</h4>
                 <ul>
-                      <li>Feladata:A sziget osztályből származtatjuk és olyan plusz funkcióval rendelkezik hogy minden körben felfedi hogy az adott szektorban van-e ellenséges jármű</li>
-                      <li>Együttműködik:Játék,Térkép</li>
+                      <li><b>Feladata:</b>A sziget osztályből származtatjuk és olyan plusz funkcióval rendelkezik hogy minden körben felfedi hogy az adott szektorban van-e ellenséges jármű</li>
+                      <li><b>Együttműködik:</b>Játék,Térkép</li>
                 </ul> 
 
         <p>Attribútumok megegyeznek a szülőosztály attribútumaival</p>
 
 
-        <p>Operációk</p>
+        <p><b>Operációk</b></p>
 
         <table>
         <tr>
@@ -668,14 +671,14 @@ li{
     </table> 
                     <h4>Radar állomás osztály</h4>
                 <ul>
-                      <li>Feladata:A sziget osztályből származtatjuk és olyan extra funkcióval rendelkezik amley lehetővé teszi hogy minden körben az adott szigetet körül vevő 4 pont szélességű négyzetben felfedi az ellenséges jármű helyszínét.</li>
-                      <li>Együttműködik:Játék,Térkép</li>
+                      <li><b>Feladata:</b>A sziget osztályből származtatjuk és olyan extra funkcióval rendelkezik amley lehetővé teszi hogy minden körben az adott szigetet körül vevő 4 pont szélességű négyzetben felfedi az ellenséges jármű helyszínét.</li>
+                      <li><b>Együttműködik:</b>Játék,Térkép</li>
                 </ul> 
 
         <p>Attribútumok megegyeznek a szülőosztály attribútumaival</p>
 
 
-        <p>Operációk</p>
+        <p><b>Operációk</b></p>
 
         <table>
         <tr>
@@ -702,11 +705,11 @@ li{
     </table> 
                     <h4>Játékos osztály</h4>
                 <ul>
-                      <li>Feladata:A játékos osztály egy ősosztály ként működik, belőle származtatjuk a többi szerepet amelyet hozzárendelünk egy játékoshoz.</li>
-                      <li>Együttműködik:Játék</li>
+                      <li><b>Feladata:</b>A játékos osztály egy ősosztály ként működik, belőle származtatjuk a többi szerepet amelyet hozzárendelünk egy játékoshoz.</li>
+                      <li><b>Együttműködik:</b>Játék</li>
                 </ul> 
 
-        <p>Attribútumok</p>
+        <p><b>Attribútumok</b></p>
 
         <table>
         <tr>
@@ -742,7 +745,7 @@ li{
 
         </table>
 
-        <p>Operációk</p>
+        <p><b>Operációk</b></p>
 
         <table>
         <tr>
@@ -758,12 +761,12 @@ li{
 
                         <h4>Kapitány osztály</h4>
                 <ul>
-                      <li>Feladata:A játékos ősosztályból származtatjuk, egy csata során ahozz a felhasználóhoz rendeljük, aki a csata során a kapitány szerepét tölti be. Ezen osztály olyan metódusokkal fog rendelkezni amelyek lehetővé teszik a kapitány képességeinek használatát a csata során.</li>
-                      <li>Együttműködik:Játékos</li>
+                      <li><b>Feladata:</b>A játékos ősosztályból származtatjuk, egy csata során ahozz a felhasználóhoz rendeljük, aki a csata során a kapitány szerepét tölti be. Ezen osztály olyan metódusokkal fog rendelkezni amelyek lehetővé teszik a kapitány képességeinek használatát a csata során.</li>
+                      <li><b>Együttműködik:</b>Játékos</li>
                 </ul> 
 
         <p>Attribútumok megegyeznek a szülőosztály attribútumaival</p>
-        <p>Operációk</p>
+        <p><b>Operációk</b></p>
 
         <table>
         <tr>
@@ -791,12 +794,12 @@ li{
 
                         <h4>Rádiós osztály</h4>
                 <ul>
-                      <li>Feladata:A játékos ősosztályból származtatjuk, egy csata során ahozz a felhasználóhoz rendeljük, aki a csata során a kapitány szerepét tölti be. Ezen osztály olyan metódusokkal fog rendelkezni amelyek lehetővé teszik a rádiós képességeinek használatát a csata során.</li>
-                      <li>Együttműködik:Játékos</li>
+                      <li><b>Feladata:</b>A játékos ősosztályból származtatjuk, egy csata során ahozz a felhasználóhoz rendeljük, aki a csata során a kapitány szerepét tölti be. Ezen osztály olyan metódusokkal fog rendelkezni amelyek lehetővé teszik a rádiós képességeinek használatát a csata során.</li>
+                      <li><b>Együttműködik:</b>Játékos</li>
                 </ul> 
 
         <p>Attribútumok megegyeznek a szülőosztály attribútumaival</p>
-        <p>Operációk</p>
+        <p><b>Operációk</b></p>
 
         <table>
         <tr>
@@ -824,13 +827,13 @@ li{
 
                         <h4>Mérnök osztály</h4>
                 <ul>
-                      <li>Feladata:A játékos ősosztályból származtatjuk, egy csata során ahozz a felhasználóhoz rendeljük, aki a csata során a kapitány szerepét tölti be. Ezen osztály olyan metódusokkal fog rendelkezni amelyek lehetővé teszik a mérnök képességeinek használatát a csata során.</li>
-                      <li>Együttműködik:Játékos</li>
+                      <li><b>Feladata:</b>A játékos ősosztályból származtatjuk, egy csata során ahozz a felhasználóhoz rendeljük, aki a csata során a kapitány szerepét tölti be. Ezen osztály olyan metódusokkal fog rendelkezni amelyek lehetővé teszik a mérnök képességeinek használatát a csata során.</li>
+                      <li><b>Együttműködik:</b>Játékos</li>
                 </ul> 
 
         <p>Attribútumok megegyeznek a szülőosztály attribútumaival</p>
         </table>
-        <p>Operációk</p>
+        <p><b>Operációk</b></p>
 
         <table>
         <tr>
@@ -849,12 +852,12 @@ li{
 
                         <h4>Elsőtiszt osztály</h4>
                 <ul>
-                      <li>Feladata:A játékos ősosztályból származtatjuk, egy csata során ahozz a felhasználóhoz rendeljük, aki a csata során a kapitány szerepét tölti be. Ezen osztály olyan metódusokkal fog rendelkezni amelyek lehetővé teszik az elsőtiszt képességeinek használatát a csata során.</li>
-                      <li>Együttműködik:Játékos</li>
+                      <li><b>Feladata:</b>A játékos ősosztályból származtatjuk, egy csata során ahozz a felhasználóhoz rendeljük, aki a csata során a kapitány szerepét tölti be. Ezen osztály olyan metódusokkal fog rendelkezni amelyek lehetővé teszik az elsőtiszt képességeinek használatát a csata során.</li>
+                      <li><b>Együttműködik:</b>Játékos</li>
                 </ul> 
 
         <p>Attribútumok megegyeznek a szülőosztály attribútumaival</p>
-        <p>Operációk</p>
+        <p><b>Operációk</b></p>
 
         <table>
         <tr>
@@ -865,15 +868,15 @@ li{
         <tr>
             <td>load</td>
             <td>rendszer</td>
-            <td>aEgy adott rendszert tölt</td>
+            <td>Egy adott rendszert tölt</td>
         </tr>
   
 
     </table> 
         <h4>Játék osztály</h4>
                 <ul>
-                      <li>Feladata:A játék objektum magába foglal mindent ami egy csata lejátszásához szükséges. Ilyenek a játékosok és szerepeik, a járművek és a térkép is</li>
-                      <li>Együttműködik:Játékos,térkép</li>
+                      <li><b>Feladata:</b>A játék objektum magába foglal mindent ami egy csata lejátszásához szükséges. Ilyenek a játékosok és szerepeik, a járművek és a térkép is</li>
+                      <li><b>Együttműködik:</b>Játékos,térkép</li>
                 </ul> 
 
         <p>Attribútumok megegyeznek a szülőosztály attribútumaival</p>
@@ -906,7 +909,7 @@ li{
         </tr>
 
         </table>
-        <p>Operációk</p>
+        <p><b>Operációk</b></p>
 
         <table>
         <tr>
@@ -921,8 +924,8 @@ li{
 
                         <h4>Mítikus szörnyek osztály</h4>
                 <ul>
-                      <li>Feladata:A játék ősosztályból származtaatva metódusait úgy változtatjuk és egészítjük ki az osztályt hogy lehetővé tegye a mítikus szörnyek csatában való megjelenését</li>
-                      <li>Együttműködik:Játék,térkép</li>
+                      <li><b>Feladata:</b>A játék ősosztályból származtaatva metódusait úgy változtatjuk és egészítjük ki az osztályt hogy lehetővé tegye a mítikus szörnyek csatában való megjelenését</li>
+                      <li><b>Együttműködik:</b>Játék,térkép</li>
                 </ul> 
 
         <p>Attribútumok megegyeznek a szülőosztály attribútumaival</p>
@@ -930,7 +933,7 @@ li{
  
 
         </table>
-        <p>Operációk</p>
+        <p><b>Operációk</b></p>
 
         <table>
         <tr>
@@ -950,13 +953,13 @@ li{
 
                         <h4>Látlak osztály</h4>
                 <ul>
-                      <li>Feladata:A játék ősosztályból származtaatva metódusait úgy változtatjuk és egészítjük ki az osztályt hogy lehetővé tegye hogy senkinek se legyen a pozíciója relytett</li>
-                      <li>Együttműködik:Játék,térkép</li>
+                      <li><b>Feladata:</b>A játék ősosztályból származtaatva metódusait úgy változtatjuk és egészítjük ki az osztályt hogy lehetővé tegye hogy senkinek se legyen a pozíciója relytett</li>
+                      <li><b>Együttműködik:</b>Játék,térkép</li>
                 </ul> 
 
         <p>Attribútumok megegyeznek a szülőösztály attribútumaival</p>
 
-        <p>Operációk</p>
+        <p><b>Operációk</b></p>
 
         <table>
         <tr>
@@ -975,14 +978,14 @@ li{
 
                         <h4>Akadály mentesítve osztály</h4>
                 <ul>
-                      <li>Feladata:A játék ősosztályból származtaatva metódusait úgy változtatjuk és egészítjük ki az osztályt hogy lehetővé tegye a hogy a járművek érinthesség saját útvonalukat</li>
-                      <li>Együttműködik:Játék,térkép</li>
+                      <li><b>Feladata:</b>A játék ősosztályból származtaatva metódusait úgy változtatjuk és egészítjük ki az osztályt hogy lehetővé tegye a hogy a járművek érinthesség saját útvonalukat</li>
+                      <li><b>Együttműködik:</b>Játék,térkép</li>
                 </ul> 
 
         <p>Attribútumok megegyeznek a szülőösztály attribútumaival</p>
 
 
-        <p>Operációk</p>
+        <p><b>Operációk</b></p>
 
         <table>
         <tr>
@@ -1001,14 +1004,14 @@ li{
                        
          <h4>Több jármű osztály</h4>
                 <ul>
-                      <li>Feladata:A játék ősosztályból származtaatva metódusait úgy változtatjuk és egészítjük ki az osztályt hogy lehetővé tegye hogy több jármű is részt vegyen a csatában</li>
-                      <li>Együttműködik:Játék,térkép</li>
+                      <li><b>Feladata:</b>A játék ősosztályból származtaatva metódusait úgy változtatjuk és egészítjük ki az osztályt hogy lehetővé tegye hogy több jármű is részt vegyen a csatában</li>
+                      <li><b>Együttműködik:</b>Játék,térkép</li>
                 </ul> 
 
         <p>Attribútumok megegyeznek a szülőösztály attribútumaival</p>
 
 
-        <p>Operációk</p>
+        <p><b>Operációk</b></p>
 
         <table>
         <tr>
@@ -1026,11 +1029,11 @@ li{
     </table>                    
     <h4>Szörny osztály</h4>
                 <ul>
-                      <li>Feladata:A szörny osztály a többi szörnyek az ősosztálya.</li>
-                      <li>Együttműködik:Szörny,térkép</li>
+                      <li><b>Feladata:</b>A szörny osztály a többi szörnyek az ősosztálya.</li>
+                      <li><b>Együttműködik:</b>Szörny,térkép</li>
                 </ul> 
 
-        <p>Attribútumok</p>
+        <p><b>Attribútumok</b></p>
 
         <table>
         <tr>
@@ -1070,23 +1073,23 @@ li{
         </tr>
         <tr>
             <td>retreat</td>
-            <td>a</td>
-            <td>a</td>
+            <td></td>
+            <td>A szörny vuszzavonul sebzés miatt</td>
         </tr>
 
     </table> 
 
         <h4>Lochnessi szörny osztály</h4>
                 <ul>
-                      <li>Feladata:A lochnessi szörny a mítikus szörny játékmódban kerülbe. A szörny osztályból származtatjuk </li>
-                      <li>Együttműködik,Szörny,térkép</li>
+                      <li><b>Feladata:</b>b>A lochnessi szörny a mítikus szörny játékmódban kerülbe. A szörny osztályból származtatjuk </li>
+                      <li><b>Együttműködik:</b>,Szörny,térkép</li>
                 </ul> 
 
         <p>Attribútumok megegyeznek a szülőösztály attribútumaival</p>
 
 
 
-        <p>Operációk</p>
+        <p><b>Operációk</b></p>
 
         <table>
         <tr>
@@ -1114,14 +1117,14 @@ li{
 
         <h4>Kraken osztály</h4>
                 <ul>
-                      <li>Feladata:A kraken szörny a mítikus szörny játékmódban kerülbe. A szörny osztályból származtatjuk.</li>
-                      <li>Együttműködik:Szörny,játék</li>
+                      <li><b>Feladata:</b>A kraken szörny a mítikus szörny játékmódban kerülbe. A szörny osztályból származtatjuk.</li>
+                      <li><b>Együttműködik:</b>Szörny,játék</li>
                 </ul> 
 
         <p>Attribútumok megegyeznek a szülőösztály attribútumaival</p>
 
  
-        <p>Operációk</p>
+        <p><b>Operációk</b></p>
 
         <table>
         <tr>
@@ -1148,12 +1151,12 @@ li{
 
         <h4>Flottatervző osztály</h4>
                 <ul>
-                      <li>Feladata: Lehetővé tegye a játékosok számára hogy személyre szabják a járműveiket</li>
-                      <li>Együttműködik:Játékos</li>
+                      <li><b>Feladata:</b> Lehetővé tegye a játékosok számára hogy személyre szabják a járműveiket</li>
+                      <li><b>Együttműködik:</b>Játékos</li>
                 </ul> 
 
 
-        <p>Operációk</p>
+        <p><b>Operációk</b></p>
 
         <table>
         <tr>
@@ -1241,27 +1244,59 @@ li{
             <h4>Chat:</h4>
             <p>A chat osztály mérni fogja, hogy mennyiszer írtak le káromkodásokat.</p>
 
-    <h1><a id="5"></a>5. Chat modellje</h1>
-    <p><br>
+    <h1>5. Chat modellje</h1>
+    <p>A chat osztály arra szolgál, hogy megteremtse annak a
+      lehetőségét, hogy a játékos tudjon kommunikálni a játékban a többi
+      játékossal, legyen az ellenség vagy csapattárs. Ezt <i>socket</i>
+      segítségével tudja megvalósítani. <br>
+      A socket egy olyan programozási interfész, amely lehetővé teszi a
+      számítógépek közötti kommunikációt a hálózaton keresztül. A
+      socketek alapvetően a kapcsolatot biztosítják két számítógép vagy
+      két folyamat között, amelyeken keresztül adatok küldhetők és
+      fogadhatók.<br>
+      Java-ban a `java.net` csomagban találhatók a socketeket kezelő
+      osztályok, például a `Socket` és a `ServerSocket`.<br>
     </p>
+    <p><b><u>A chat rendszer működése:</u></b><br>
+      A játékosoknak lehetősége van szövegesen egymással kommunikálni,
+      ami elengedhetetlen a játék közben. Ez történhet csapaton belül,
+      ellenséges csapattal, vagy egy konkrét játékossal.</p>
+    <p>Mikor belépünk egy chatbe, létrejön a mi oldalunkon egy <i>kliens</i>.
+      Ez a rendszer belső kommunikációját segíti elő. A létrejött
+      klienst ezután a klienskezelő osztály kezeli, azaz itt osztja szét
+      a rendszer a küldendő üzeneteket a többi felhasználónak. A szerver
+      ahhoz szükséges, hogy különböző helyen levő eszközök között is
+      tudjon zajlani a kommunikáció, ne csak egy számítógépen.</p>
+    <p>A felhasználó által a chat ablakba beírt szöveget a rendszer,
+      pontosabban a kliens osztály beolvassa, majd eljuttatja a
+      klienskezelőbe. Ez az osztály elküldi minden másik felhasználónak
+      (kliensnek) ezt az üzenetet. A különböző eszközök szerveren
+      keresztül, úgynevezett socket segítségével kommunikálnak, amely
+      lehetővé teszi a számítógépek közötti kommunikációt a hálózaton
+      keresztül </p>
     <h2><a id="5_1"></a>5.1. Statikus modell</h2>
     <h3>5.1.1 Kapcsolatok pontosítása</h3>
-    <p>Az alrendszernek 3 osztálya van:</p>
+    <p>Az chat alrendszernek 3 osztálya van, amelyek segítik a rendszer
+      működését:</p>
     <ul>
       <li>
-        <p>szerver</p>
+        <p>a Szerver</p>
       </li>
       <li>
-        <p>kliens</p>
+        <p>a Kliens</p>
       </li>
       <li>
-        <p>kliens-kezelő</p>
+        <p>a Kliens-kezelő.</p>
       </li>
     </ul>
-    Ezek között a kapcsolat úgy épül fel, hogy a kliens osztály a
-    kliens-kezelő osztállyal, a klienskezelő osztály pedig a szerverrel
-    kommunikál.<br>
-    <br>
+    <p> A Játékos a Kliens osztállyal van közvetlen kapcsolatban, az a
+      Klienskezelő osztállyal, a Klienskezelő osztály pedig a Szerverrel
+      kommunikál.</p>
+    <p>Mivel a Játékos osztály nem ebben az alrendszerben van
+      definiálva, ezért az a két alrendszer együttműködik egy chat
+      beszélgetés során.<br>
+      <br>
+    </p>
     <h3>5.1.2 Attribútumok azonosítása</h3>
     <h4><u>Chat-szerver:</u></h4>
     <ul>
@@ -1307,17 +1342,24 @@ li{
     </ul>
     <p><br>
     </p>
-    <h2><a id="5_2"></a>5.2. Dinamikus modell</h2>
+    <h2>5.2. Dinamikus modell</h2>
+    <p>A rendszer állapotdiagramja:<br>
+    </p>
     <img moz-do-not-send="true" src="chat_dinamikus.png" alt=""
       width="704" height="304"> <br>
     <br>
-    <h2><a id="5_3"></a>5.3. Funkcionális modell<br>
-    </h2>
+    <h2>5.3. Funkcionális modell</h2>
+    <p>A rendszer működése során az osztályok egymással kommunikálnak,
+      adatokat küldenek oda-vissza. Ezek ábrával történő szemléltetése:<br>
+    </p>
     <img moz-do-not-send="true" src="chat_funkcionalis.png" alt=""
       width="945" height="441"><br>
     <br>
     <br>
-    <h2><a id="5_4"></a>5.4. Az analízis modell osztálydiagramja</h2>
+    <h2>5.4. Az analízis modell osztálydiagramja</h2>
+    <p>A rendszer osztályokból azon belül attribútumokból, metódusokból
+      épül fel, melyek a következőképpen néznek ki:<br>
+    </p>
     <img moz-do-not-send="true" src="chat_osztalydiagram.png" alt=""
       width="1101" height="298"><br>
     <br>
@@ -1343,7 +1385,7 @@ li{
               </td>
               <td valign="top">Socket<br>
               </td>
-              <td valign="top">Kapcsolat a Klienskezelővel<br>
+              <td valign="top">Kapcsolat a rendszer többi osztályával<br>
               </td>
             </tr>
             <tr>
@@ -1351,8 +1393,8 @@ li{
               </td>
               <td valign="top">BufferedReader<br>
               </td>
-              <td valign="top">Ennek segítségével jut el a
-                Kliens-kezelőbe a játékos begépelt üzenete<br>
+              <td valign="top">A játékos által begépelt üzenet
+                beolvasása<br>
               </td>
             </tr>
             <tr>
@@ -1360,8 +1402,8 @@ li{
               </td>
               <td valign="top">BufferedWriter<br>
               </td>
-              <td valign="top">Ennek segítségével jut el a játékoshoz a
-                mások által elküldött üzenet<br>
+              <td valign="top">A mások által elküldött üzenet kiírása a
+                játékosnak<br>
               </td>
             </tr>
             <tr>
@@ -1465,7 +1507,7 @@ li{
               </td>
               <td valign="top">BufferedWriter<br>
               </td>
-              <td valign="top">Ennek segítségével jut el a játékoshoz a
+              <td valign="top">Ennek segítségével jut el a Klienshez a
                 mások által elküldött üzenet<br>
               </td>
             </tr>
@@ -1580,10 +1622,10 @@ li{
     <p><br>
     </p>
     <br>
-  </body>
 
  <h2><a id="6"></a>6. Kommunikáció a szerverrel</h2>
     <h3><a id="6_1"></a>6.1 Statikus modell</h3>
+    <img src="uml.png" width="1000" height="600"  alt="Italian Trulli" align="top">
     <h4><a id="6_1_1"></a>6.1.1 Kapcsolatok pontosítása</h4>
     <p>Az alrendszernek 6 osztálya van:</p>
     <ul>
@@ -1624,9 +1666,6 @@ li{
     <ul>
         <li>
             <p>felhasználónév</p>
-        </li>
-        <li>
-            <p>user id</p>
         </li>
         <li>
             <p>jelszó</p>
@@ -1705,30 +1744,444 @@ li{
         </li>
     </ul>
 
+    <h3><a id="6_5"></a>Az analízis modell osztálydiagramja</h3>
+    <img moz-do-not-send="true" src="uml.png" alt="">
+
     <h3><a id="6_6"></a>6.6 Az analízis modell osztályainak listája</h3>
-    <p>A <strong><u>User</u></strong> osztály a felhasználókat reprezentálja, és azonosítóval rendelkezik, amely
-        azonosítja a felhasználót a
-        chat során.</p>
-    <p>A <strong><u>ChatRoom</u></strong> osztály a chat szobát reprezentálja, amelyben a felhasználók üzeneteket
-        küldhetnek és fogadhatnak.</p>
-    <p>A <strong><u>ChatMessage</u></strong> osztály az üzenetek továbbítására szolgáló osztály.</p>
-    <p>A <strong><u>GameServer</u></strong> osztály a játékot kezeli a szerver oldalon, és azonosítóval rendelkezik,
-        amely azonosítja a játékot a játék során.</p>
-    <p>A <strong><u>GameClient</u></strong> osztály a játékot kezeli a kliens oldalon, és azonosítóval rendelkezik,
-        amely azonosítja a játékot a játék során.</p>
-    <p>A <strong><u>Player</u></strong> osztály a játékosokat reprezentálja, és azonosítóval rendelkezik, amely
-        azonosítja a játékost a játék során.</p>
+    <h4><u>User:</u></h4>
+    <ul>
+        <li>
+            <p><strong>felelőssége, feladata:</strong> a felhasználókat reprezentálja, és azonosítóval rendelkezik,
+                amely
+                azonosítja a felhasználót a
+                chat során.</p>
+        </li>
+        <li>
+            <p><strong>együttműködők:</strong> ChatRoom, ChatMessage</p>
+        </li>
+        <li>
+            <p><strong>attribútumok:</strong></p>
+            <table width="50%" cellspacing="0" cellpadding="4" border="1">
+                <thead>
+                    <th>Név</th>
+                    <th>Típus</th>
+                    <th>Leírás</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>felhasználónév</td>
+                        <td>String</td>
+                        <td>A felhasználó neve, ez az egyedi azonosító, ami minden felhasználónak különbözőnek kell
+                            lennie.</td>
+                    </tr>
+                    <tr>
+                        <td>jelszó</td>
+                        <td>String</td>
+                        <td>A felhasználó jelszava, ezzel tud belépni a játékba.</td>
+                    </tr>
+                    <tr>
+                        <td>e-mail cím</td>
+                        <td>String</td>
+                        <td>A felhasználó e-mail címe.</td>
+                    </tr>
+                </tbody>
 
-<!DOCTYPE html>
-<html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Captain Sonar Szoftverfejlesztés</title>
-</head>
-<body>
+            </table>
+        </li>
+        <li>
+            <p><strong>operációk:</strong></p>
+            <table width="50%" cellspacing="0" cellpadding="4" border="1">
+                <thead>
+                    <th>Név</th>
+                    <th>Argumentumok</th>
+                    <th>Működése, feladata</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>login()</td>
+                        <td></td>
+                        <td>Bejelentkeztet a játékba.</td>
+                    </tr>
+                    <tr>
+                        <td>logout()</td>
+                        <td></td>
+                        <td>Kijelentkeztet a játékból.</td>
+                    </tr>
+                    <tr>
+                        <td>register()</td>
+                        <td></td>
+                        <td>Regisztrációt biztosít a felhasználóknak, hogy tudjanak játszani.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </li>
+    </ul>
+    <h4><u>ChatRoom:</u></h4>
+    <ul>
+        <li>
+            <p><strong>felelőssége, feladata:</strong> a felhasználók üzeneteket
+                küldhetnek és fogadhatnak</p>
+        </li>
+        <li>
+            <p><strong>együttműködők:</strong> User, ChatMessage</p>
+        </li>
+        <li>
+            <p><strong>attribútumok:</strong></p>
+            <table width="50%" cellspacing="0" cellpadding="4" border="1">
+                <thead>
+                    <th>Név</th>
+                    <th>Típus</th>
+                    <th>Leírás</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>szoba neve</td>
+                        <td>String</td>
+                        <td>A chat szoba neve.</td>
+                    </tr>
+                    <tr>
+                        <td>szoba id</td>
+                        <td>int</td>
+                        <td>A szoba egyedi azonosítója</td>
+                    </tr>
+                    <tr>
+                        <td>tulaj id</td>
+                        <td>String</td>
+                        <td>A szoba tulajának azonosítója, a felhasználó aki létrehozta, annak a felhasználóneve</td>
+                    </tr>
+                    <tr>
+                        <td>tagok listája</td>
+                        <td>String array</td>
+                        <td>A tagok felhasználó neveit tartalmazó tömb</td>
+                    </tr>
+                </tbody>
 
-    <h1>A szoftver grafikus felülete</h1>
+            </table>
+        </li>
+        <li>
+            <p><strong>operációk:</strong></p>
+            <table width="50%" cellspacing="0" cellpadding="4" border="1">
+                <thead>
+                    <th>Név</th>
+                    <th>Argumentumok</th>
+                    <th>Működése, feladata</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>createRoom()</td>
+                        <td>String roomName</td>
+                        <td>Létrehoz egy chatszobát a megadott névvel és hozzárendel egy id-t.</td>
+                    </tr>
+                    <tr>
+                        <td>deleteRoom()</td>
+                        <td>int id</td>
+                        <td>Kitörli a megadott id-vel rendelkező chat szobát.</td>
+                    </tr>
+                    <tr>
+                        <td>addUser()</td>
+                        <td>User user</td>
+                        <td>Hozzáadja a megadott felhasználót a chat szobához.</td>
+                    </tr>
+                    <tr>
+                        <td>removeUser()</td>
+                        <td>User user</td>
+                        <td>Eltávolítja a chat szobából a megadott felhasználót.</td>
+                    </tr>
+                    <tr>
+                        <td>listUsers()</td>
+                        <td></td>
+                        <td>Kilistázza a chat szoba tagjait.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </li>
+    </ul>
+    <h4><u>ChatMessage:</u></h4>
+    <ul>
+        <li>
+            <p><strong>felelőssége, feladata:</strong> az üzenetek továbbítására szolgál</p>
+        </li>
+        <li>
+            <p><strong>együttműködők:</strong> User, ChatRoom</p>
+        </li>
+        <li>
+            <p><strong>attribútumok:</strong></p>
+            <table width="50%" cellspacing="0" cellpadding="4" border="1">
+                <thead>
+                    <th>Név</th>
+                    <th>Típus</th>
+                    <th>Leírás</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>üzenet szövege</td>
+                        <td>String</td>
+                        <td>A küldeni kívánt üzenet szövege</td>
+                    </tr>
+                    <tr>
+                        <td>küldő id</td>
+                        <td>String</td>
+                        <td>Az üzenet küldőjének a felhasználóneve</td>
+                    </tr>
+                    <tr>
+                        <td>fogadó id</td>
+                        <td>String</td>
+                        <td>Az üzenet fogadójának a felhasználóneve</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </li>
+        <li>
+            <p><strong>operációk:</strong></p>
+            <table width="50%" cellspacing="0" cellpadding="4" border="1">
+                <thead>
+                    <th>Név</th>
+                    <th>Argumentumok</th>
+                    <th>Működése, feladata</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>sendMessage()</td>
+                        <td>String message, User user</td>
+                        <td>Elküldi a megadott üzenetet a megadott felhasználónak.</td>
+                    </tr>
+                    <tr>
+                        <td>deleteMessage()</td>
+                        <td>String senderId, String recieverId</td>
+                        <td>Kitörli a megadott fehasználó által a megadott felhasználónak küldött összes üzenetét.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </li>
+    </ul>
+    <h4><u>GameServer:</u></h4>
+    <ul>
+        <li>
+            <p><strong>felelőssége, feladata:</strong> a játékot kezeli a szerver oldalon, és azonosítóval rendelkezik,
+                amely azonosítja a játékot a játék során.</p>
+        </li>
+        <li>
+            <p><strong>együttműködők:</strong> GameClient, Player</p>
+        </li>
+        <li>
+            <p><strong>attribútumok:</strong></p>
+            <table width="50%" cellspacing="0" cellpadding="4" border="1">
+                <thead>
+                    <th>Név</th>
+                    <th>Típus</th>
+                    <th>Leírás</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>játék id</td>
+                        <td>int</td>
+                        <td>A játék egyedi azonosítója.</td>
+                    </tr>
+                    <tr>
+                        <td>játék állapota</td>
+                        <td>GameState</td>
+                        <td>A játék jelenlegi állapota.(lobby, játékban, játék vége...)</td>
+                    </tr>
+                    <tr>
+                        <td>játékosok listája</td>
+                        <td>String array</td>
+                        <td>A játékosok azonosítóját tartalmazza akik részt vesznek a játékban</td>
+                    </tr>
+                    <tr>
+                        <td>játék beállításai</td>
+                        <td>String</td>
+                        <td>Milyen játékmódban lett elindítva a játék.</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </li>
+        <li>
+            <p><strong>operációk:</strong></p>
+            <table width="50%" cellspacing="0" cellpadding="4" border="1">
+                <thead>
+                    <th>Név</th>
+                    <th>Argumentumok</th>
+                    <th>Működése, feladata</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>startGame()</td>
+                        <td></td>
+                        <td>Elindítja a játszmát.</td>
+                    </tr>
+                    <tr>
+                        <td>stopGame()</td>
+                        <td></td>
+                        <td>Megállítja a játszmát.</td>
+                    </tr>
+                    <tr>
+                        <td>addPlayer()</td>
+                        <td>Player player</td>
+                        <td>Hozzáadja a megadott játékost a játszmához.</td>
+                    </tr>
+                    <tr>
+                        <td>removePlayer</td>
+                        <td>Player player</td>
+                        <td>Eltávolítja a megadott játékost a játszmából.</td>
+                    </tr>
+                    <tr>
+                        <td>updateGameState()</td>
+                        <td>GameState gameState</td>
+                        <td>A játszma állapotát a megadott állapotra állítja át.</td>
+                    </tr>
+                    <tr>
+                        <td>saveGame()</td>
+                        <td></td>
+                        <td>Elmenti a játszmát.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </li>
+    </ul>
+    <h4><u>GameClient:</u></h4>
+    <ul>
+        <li>
+            <p><strong>felelőssége, feladata:</strong> a játékot kezeli a kliens oldalon, és azonosítóval rendelkezik,
+                amely azonosítja a játékot a játék során.</p>
+        </li>
+        <li>
+            <p><strong>együttműködők:</strong> GameClient, Player</p>
+        </li>
+        <li>
+            <p><strong>attribútumok:</strong></p>
+            <table width="50%" cellspacing="0" cellpadding="4" border="1">
+                <thead>
+                    <th>Név</th>
+                    <th>Típus</th>
+                    <th>Leírás</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>játék id</td>
+                        <td>int</td>
+                        <td>A játék egyedi azonosítója.</td>
+                    </tr>
+                    <tr>
+                        <td>játék állapota</td>
+                        <td>GameState</td>
+                        <td>A játék jelenlegi állapota.(lobby, játékban, játék vége...)</td>
+                    </tr>
+                    <tr>
+                        <td>játékosok listája</td>
+                        <td>String array</td>
+                        <td>A játékosok azonosítóját tartalmazza akik részt vesznek a játékban</td>
+                    </tr>
+                    <tr>
+                        <td>játék beállításai</td>
+                        <td>String</td>
+                        <td>Milyen játékmódban lett elindítva a játék.</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </li>
+        <li>
+            <p><strong>operációk:</strong></p>
+            <table width="50%" cellspacing="0" cellpadding="4" border="1">
+                <thead>
+                    <th>Név</th>
+                    <th>Argumentumok</th>
+                    <th>Működése, feladata</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>connectToServer()</td>
+                        <td>String serverAddress</td>
+                        <td>Csatlakozik a megadott szerverhez.</td>
+                    </tr>
+                    <tr>
+                        <td>disconnectFromServer()</td>
+                        <td></td>
+                        <td>Lecsatlakozik a jelenlegi szerverről.</td>
+                    </tr>
+                    <tr>
+                        <td>joinGame()</td>
+                        <td>Player player</td>
+                        <td>Csatlakozik a megadott játékos játékához.</td>
+                    </tr>
+                    <tr>
+                        <td>leaveGame()</td>
+                        <td></td>
+                        <td>Elhagyja a jelenlegi játékot.0</td>
+                    </tr>
+                    <tr>
+                        <td>updateGameState()</td>
+                        <td>GameSate gameState</td>
+                        <td>Megváltoztatja a játék jelenlegi állaptotát a megadott állapotra.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </li>
+    </ul>
+    <h4><u>Player:</u></h4>
+    <ul>
+        <li>
+            <p><strong>felelőssége, feladata:</strong> a játékosokat reprezentálja, és azonosítóval rendelkezik, amely
+                azonosítja a játékost a játék során.</p>
+        </li>
+        <li>
+            <p><strong>együttműködők:</strong> GameClient, GameServer</p>
+        </li>
+        <li>
+            <p><strong>attribútumok:</strong></p>
+            <table width="50%" cellspacing="0" cellpadding="4" border="1">
+                <thead>
+                    <th>Név</th>
+                    <th>Típus</th>
+                    <th>Leírás</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>játékos név</td>
+                        <td>String</td>
+                        <td>A játékos játékon belüli neve, amit a többi játékos lát.</td>
+                    </tr>
+                    <tr>
+                        <td>játékos id</td>
+                        <td>String</td>
+                        <td>A játékos felhasználóneve</td>
+                    </tr>
+                    <tr>
+                        <td>flotta beállítások</td>
+                        <td>String array</td>
+                        <td>A játékos milyen tulajdonságú hajóval/tengeralattjáróval megy csatába.</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </li>
+        <li>
+            <p><strong>operációk:</strong></p>
+            <table width="50%" cellspacing="0" cellpadding="4" border="1">
+                <thead>
+                    <th>Név</th>
+                    <th>Argumentumok</th>
+                    <th>Működése, feladata</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>setName()</td>
+                        <td>String name</td>
+                        <td>Beállítja a nevének a megadott nevet.</td>
+                    </tr>
+                    <tr>
+                        <td>changeFleetSettings()</td>
+                        <td></td>
+                        <td>Átállítja a flotta beállításokat.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </li>
+    </ul>
+
+<h1>A szoftver grafikus felülete</h1>
     
     <p>Ahhoz, hogy a játékosok mindegyike élvezhesse a Captain Sonar szoftvert, függetlenül attól, hogy Windows-t, macOS-t vagy Android-ot használ, olyan technológiára van szükség, amely lehetővé teszi az egyszerű és hatékony többplatformos alkalmazásfejlesztést. Mi erre a megoldást a JavaFX-ben látjuk.</p>
 
@@ -1743,6 +2196,106 @@ li{
     </ul>
 
 </body>
-</html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .class-container {
+            margin-bottom: 20px;
+        }
+
+        .class-name {
+            font-weight: bold;
+        }
+
+        .variables {
+            margin-left: 20px;
+        }
+
+        .methods {
+            margin-left: 20px;
+        }
+    </style>
+    <title>Grafikus Alrendszer Osztályai</title>
+</head>
+<body>
+
+<div class="class-container">
+    <div class="class-name">GameRenderer osztály</div>
+    <div class="variables">
+        - int screenWidth<br>
+        - int screenHeight<br>
+        - GameState currentGameState<br>
+        - List&lt;Effect&gt; activeEffects
+    </div>
+    <div class="methods">
+        - GameRenderer(): Konstruktor, inicializációs műveleteket hajt végre.<br>
+        - renderGameState(): Megjeleníti a játék állapotát a képernyőn.<br>
+        - applyGameEffects(): Alkalmazza a játékeffekteket (pl. robbanások, fényeffektek).
+    </div>
+</div>
+<img src="image.png" width="1000" height="600"  alt="Italian Trulli" align="top">
+<div class="class-container">
+    <div class="class-name">PlayerRenderer osztály</div>
+    <div class="variables">
+        - Player associatedPlayer<br>
+        - int healthPoints<br>
+        - Weapon equippedWeapon
+    </div>
+    <div class="methods">
+        - PlayerRenderer(): Konstruktor, inicializációs műveleteket hajt végre.<br>
+        - displayPlayerInfo(): Megjeleníti a játékos információkat (pl. hajóállapot, fegyverek).<br>
+        - handleUserInput(): Kezeli a felhasználói bemeneteket (pl. kattintások, billentyűleütések).
+    </div>
+</div>
+
+<div class="class-container">
+    <div class="class-name">GameBoardRenderer osztály</div>
+    <div class="variables">
+        - GameBoard gameBoard<br>
+        - int boardWidth<br>
+        - int boardHeight<br>
+        - List&lt;Player&gt; playersOnBoard
+    </div>
+    <div class="methods">
+        - GameBoardRenderer(): Konstruktor, inicializációs műveleteket hajt végre.<br>
+        - renderGameBoard(): Megjeleníti a játéktáblát a képernyőn.
+    </div>
+</div>
+
+<div class="class-container">
+    <div class="class-name">GameManager osztály</div>
+    <div class="variables">
+        - List&lt;Player&gt; players<br>
+        - GameStatus currentGameStatus<br>
+        - int currentPlayerIndex
+    </div>
+    <div class="methods">
+        - GameManager(): Konstruktor, inicializációs műveleteket hajt végre.<br>
+        - startGame(): Elindítja a játékot.<br>
+        - handlePlayerMove(): Kezeli a játékos lépését.<br>
+        - endGame(): Lezárja a játékot és kihirdeti az eredményt.
+    </div>
+</div>
+
+<div class="class-container">
+    <div class="class-name">UserInputHandler osztály</div>
+    <div class="variables">
+        - InputDevice inputDevice<br>
+        - boolean isMouseActive<br>
+        - boolean isKeyboardActive
+    </div>
+    <div class="methods">
+        - UserInputHandler(): Konstruktor, inicializációs műveleteket hajt végre.<br>
+        - getUserInput(): Lekéri a felhasználói bemeneteket (pl. egérkattintások, billentyűleütések).<br>
+        - processInput(): Feldolgozza a felhasználói bemenetet és továbbítja a megfelelő alrendszernek.
+    </div>
+</div>
 
 </html>
