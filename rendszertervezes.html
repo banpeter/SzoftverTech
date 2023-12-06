@@ -124,6 +124,41 @@ li{
     </p>
 
 
+  <h2>Game (Játék) osztály</h2>
+  <p><strong>Paraméterek:</strong></p>
+  <ul>
+      <li>players (List<Player>): A játékosok listája, akik részt vesznek a játékban.</li>
+  </ul>
+
+  <h2>Gamer (Játékos) osztály</h2>
+  <p><strong>Paraméterek:</strong></p>
+  <ul>
+      <li>name (String): A játékos neve.</li>
+      <li>role (String): A játékos szerepe (pl., Captain, Engineer, First Mate, Radio Operator).</li>
+  </ul>
+
+  <h2>PlayerDatabaseOperations (Játékos Adatbázis Műveletek) osztály</h2>
+  <p><strong>Paraméterek:</strong></p>
+  <ul>
+      <li>connector (DatabaseConnector): Az adatbáziskapcsolatot kezelő objektum.</li>
+  </ul>
+  <p><strong>Metódusok:</strong></p>
+  <ul>
+      <li>addPlayer(String name, String role): Új játékos hozzáadása az adatbázishoz.</li>
+      <li>getPlayers(): Az összes játékos lekérdezése az adatbázisból.</li>
+  </ul>
+
+  <h2>DatabaseConnector (Adatbázis Kapcsolódás) osztály</h2>
+  <p><strong>Paraméterek:</strong></p>
+  <ul>
+      <li>databaseUrl (String): Az adatbázis elérési útvonala vagy URL-je.</li>
+  </ul>
+  <p><strong>Metódusok:</strong></p>
+  <ul>
+      <li>connect(): Adatbázis kapcsolat létrehozása.</li>
+      <li>disconnect(): Adatbázis kapcsolat lezárása.</li>
+  </ul>
+
 </body>
 
 
